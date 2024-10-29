@@ -22,7 +22,7 @@ BaselineOfAlSitExCormas >> baseline: spec [
 
 		"Packages"
 		spec package: 'AlSitEx-Cormas'
-			with: [ spec requires: #('Cormas') ].
+			with: [ spec requires: #( 'Cormas' 'ECECModel' ) ].
 
 		"Groups"
 		spec group: 'Core' with: #( 'AlSitEx-Cormas' ) ]
