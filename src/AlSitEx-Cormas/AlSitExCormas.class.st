@@ -6,6 +6,12 @@ Class {
 }
 
 { #category : 'as yet unclassified' }
+AlSitExCormas >> run [
+
+	self runEcecModel
+]
+
+{ #category : 'as yet unclassified' }
 AlSitExCormas >> runEcecModel [
 
 	| simulation |
