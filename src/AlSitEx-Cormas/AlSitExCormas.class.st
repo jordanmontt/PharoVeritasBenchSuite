@@ -11,9 +11,16 @@ AlSitExCormas >> runEcecModel [
 	| simulation |
 	simulation := (CMSimulation for: ECECModel)
 		activeInitSelector: #homogeneousEnvironment;
-		finalTimeStep: 1000;
+		finalTimeStep: 10000;
 		activeControlSelector: #step:;
-		initializeSimulation.
+		initializeSimulation;
+		yourself.
 	simulation runAllSteps.
 	^ simulation
+	"simulation runAllStepsAfterEachDo: [
+		Transcript
+			show: 'Simulation step ';
+			show: simulation currentTimeStep asString;
+			cr ].
+	Transcript show: simulation data last; cr"
 ]
