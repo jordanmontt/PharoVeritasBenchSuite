@@ -8,16 +8,16 @@ Class {
 { #category : 'as yet unclassified' }
 AlSitExCormas >> run [
 
-	self runEcecModel
+	self runEcecModelFor: 10000
 ]
 
 { #category : 'as yet unclassified' }
-AlSitExCormas >> runEcecModel [
+AlSitExCormas >> runEcecModelFor: durationSteps [
 
 	| simulation |
 	simulation := (CMSimulation for: ECECModel)
 		activeInitSelector: #homogeneousEnvironment;
-		finalTimeStep: 10000;
+		finalTimeStep: durationSteps;
 		activeControlSelector: #step:;
 		initializeSimulation;
 		yourself.
