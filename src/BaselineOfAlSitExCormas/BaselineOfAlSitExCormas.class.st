@@ -19,10 +19,15 @@ BaselineOfAlSitExCormas >> baseline: spec [
 		spec
  			baseline: 'ECECModel'
 			with: [ spec repository: 'github://cormas/ecec-model:main' ].
+			
+		"Illimani"
+		spec
+ 			baseline: 'IllimaniProfiler'
+			with: [ spec repository: 'github://jordanmontt/illimani-memory-profiler:main' ].
 
 		"Packages"
 		spec package: 'AlSitEx-Cormas'
-			with: [ spec requires: #( 'Cormas' 'ECECModel' ) ].
+			with: [ spec requires: #( 'Cormas' 'ECECModel' 'IllimaniProfiler' ) ].
 
 		"Groups"
 		spec group: 'Core' with: #( 'AlSitEx-Cormas' ) ]
