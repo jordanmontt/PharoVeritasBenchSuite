@@ -5,7 +5,7 @@ Class {
 	#package : 'AlSitEx-Cormas'
 }
 
-{ #category : 'as yet unclassified' }
+{ #category : 'api' }
 AlSitExCormas >> run [
 
 	self runEcecModelFor: 10000
