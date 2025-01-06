@@ -23,7 +23,7 @@ BaselineOfAlSitExCormas >> baseline: spec [
 		"Illimani"
 		spec
  			baseline: 'IllimaniProfiler'
-			with: [ spec repository: 'github://jordanmontt/illimani-memory-profiler:main' ].
+			with: [ spec repository: 'github://jordanmontt/illimani-memory-profiler:dev' ].
 
 		"Packages"
 		spec package: 'AlSitEx-Cormas'
