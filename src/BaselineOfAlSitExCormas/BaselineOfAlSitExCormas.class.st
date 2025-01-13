@@ -24,10 +24,13 @@ BaselineOfAlSitExCormas >> baseline: spec [
 		spec
  			baseline: 'IllimaniProfiler'
 			with: [ spec repository: 'github://jordanmontt/illimani-memory-profiler:dev' ].
+		spec
+ 			baseline: 'SendersChainTransformer'
+			with: [ spec repository: 'github://jordanmontt/senders-chain-transformer:main' ].
 
 		"Packages"
 		spec package: 'AlSitEx-Cormas'
-			with: [ spec requires: #( 'Cormas' 'ECECModel' 'IllimaniProfiler' ) ].
+			with: [ spec requires: #( 'Cormas' 'ECECModel' 'IllimaniProfiler' 'SendersChainTransformer' ) ].
 
 		"Groups"
 		spec group: 'Core' with: #( 'AlSitEx-Cormas' ) ]
