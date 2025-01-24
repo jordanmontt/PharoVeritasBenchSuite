@@ -6,15 +6,31 @@ Class {
 }
 
 { #category : 'as yet unclassified' }
-AlSitExCormas >> applicationClasses [
+AlSitExCormas class >> applicationClasses [
 
 	^ (self applicationPackages collect: #asPackage) flatCollect: #definedClasses
 ]
 
 { #category : 'as yet unclassified' }
+AlSitExCormas class >> applicationPackages [
+
+	^ #( #'Cormas-SensitivityAnalysis-UI-Tests' #'Cormas-UI-Tilesets' #'AlSitEx-Cormas' #'Cormas-Core' #BaselineOfCormas
+	     #BaselineOfECECModel #'Cormas-UI-Translator' #'ECEC-Model' #'Cormas-Tests' #'Cormas-UI-Roassal3'
+	     #BaselineOfAlSitExCormas #'Cormas-UI-Commands' #'ECEC-Model-Tests' #'Cormas-CodeGeneration'
+	     #'Cormas-UI-Tests' #'Cormas-SensitivityAnalysis' #'Cormas-SensitivityAnalysis-Tests'
+	     #'Cormas-SensitivityAnalysis-UI' #'Cormas-CodeGeneration-Tests' #'Cormas-UI' #'Cormas-Mocks' ) collect: #asPackage
+]
+
+{ #category : 'as yet unclassified' }
+AlSitExCormas >> applicationClasses [
+
+	^ self class applicationClasses
+]
+
+{ #category : 'as yet unclassified' }
 AlSitExCormas >> applicationPackages [
 
-	^ #(#'Cormas-SensitivityAnalysis-UI-Tests' #'Cormas-UI-Tilesets' #'AlSitEx-Cormas' #'Cormas-Core' #BaselineOfCormas #BaselineOfECECModel #'Cormas-UI-Translator' #'ECEC-Model' #'Cormas-Tests' #'Cormas-UI-Roassal3' #BaselineOfAlSitExCormas #'Cormas-UI-Commands' #'ECEC-Model-Tests' #'Cormas-CodeGeneration' #'Cormas-UI-Tests' #'Cormas-SensitivityAnalysis' #'Cormas-SensitivityAnalysis-Tests' #'Cormas-SensitivityAnalysis-UI' #'Cormas-CodeGeneration-Tests' #'Cormas-UI' #'Cormas-Mocks')
+	^ self class applicationPackages
 ]
 
 { #category : 'api' }
