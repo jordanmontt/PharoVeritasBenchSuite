@@ -8,7 +8,7 @@ Class {
 { #category : 'as yet unclassified' }
 AlSitExCormas class >> applicationClasses [
 
-	^ (self applicationPackages collect: #asPackage) flatCollect: #definedClasses
+	^ self applicationPackages flatCollect: #definedClasses
 ]
 
 { #category : 'as yet unclassified' }
