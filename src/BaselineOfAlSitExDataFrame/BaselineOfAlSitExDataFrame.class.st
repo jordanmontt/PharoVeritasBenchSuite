@@ -10,7 +10,7 @@ BaselineOfAlSitExDataFrame >> baseline: spec [
 	<baseline>
 
 	spec for: #'common' do: [
-		spec package: 'ACEx-DataFrame'.
+		spec package: 'AlSitEx-DataFrame'.
 
 		"External dependencies"
 		spec
@@ -18,7 +18,7 @@ BaselineOfAlSitExDataFrame >> baseline: spec [
 			with: [ spec repository: 'github://PolyMathOrg/DataFrame/src' ].
 
 		"Linking external dependencies"
-		spec package: 'ACEx-DataFrame'
+		spec package: 'AlSitEx-DataFrame'
 			with: [ spec requires: #('DataFrame') ].
 
 		"Groups"
