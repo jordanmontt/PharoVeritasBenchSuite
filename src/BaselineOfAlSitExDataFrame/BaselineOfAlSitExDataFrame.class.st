@@ -22,5 +22,5 @@ BaselineOfAlSitExDataFrame >> baseline: spec [
 			with: [ spec requires: #('DataFrame') ].
 
 		"Groups"
-		spec group: 'Core' with: #( 'ACEx-DataFrame' ) ]
+		spec group: 'Core' with: #( 'AlSitEx-DataFrame' ) ]
 ]
