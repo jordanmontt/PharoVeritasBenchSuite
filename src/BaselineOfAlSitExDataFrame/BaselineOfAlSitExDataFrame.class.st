@@ -1,6 +1,6 @@
 Class {
 	#name : 'BaselineOfAlSitExDataFrame',
-	#superclass : 'BaselineOf',
+	#superclass : 'AbstractBaselineOfAlSitEx',
 	#category : 'BaselineOfAlSitExDataFrame',
 	#package : 'BaselineOfAlSitExDataFrame'
 }
@@ -11,16 +11,13 @@ BaselineOfAlSitExDataFrame >> baseline: spec [
 
 	spec for: #'common' do: [
 		spec package: 'AlSitEx-DataFrame'.
+		
+		self addIllimaniDependencies: spec.
 
 		"External dependencies"
-		spec
- 			baseline: 'DataFrame'
-			with: [ spec repository: 'github://PolyMathOrg/DataFrame/src' ].
+		spec baseline: 'DataFrame' with: [ spec repository: 'github://PolyMathOrg/DataFrame/src' ].
 
-		"Linking external dependencies"
-		spec package: 'AlSitEx-DataFrame'
-			with: [ spec requires: #('DataFrame') ].
+		spec package: 'AlSitEx-DataFrame' with: [ spec requires: #('DataFrame') , self illimaniStringDependencies ].
 
-		"Groups"
 		spec group: 'Core' with: #( 'AlSitEx-DataFrame' ) ]
 ]
