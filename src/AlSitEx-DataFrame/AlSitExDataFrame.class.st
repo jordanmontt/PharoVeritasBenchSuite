@@ -35,7 +35,7 @@ AlSitExDataFrame >> applicationPackages [
 { #category : 'running' }
 AlSitExDataFrame >> run [
 	"self runSyntheticOneHundredTimes"
-	^ self runSyntheticTenTimes
+	^ self runSyntheticFiftyTimes
 ]
 
 { #category : 'running' }
