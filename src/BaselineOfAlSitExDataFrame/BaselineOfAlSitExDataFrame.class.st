@@ -6,6 +6,17 @@ Class {
 }
 
 { #category : 'baselines' }
+BaselineOfAlSitExDataFrame >> addIllimaniDependencies: spec [
+
+	spec
+ 		baseline: 'IllimaniProfiler'
+		with: [ spec repository: 'github://jordanmontt/illimani-memory-profiler:dev' ].
+	spec
+ 		baseline: 'SendersChainTransformer'
+		with: [ spec repository: 'github://jordanmontt/senders-chain-transformer:main' ]
+]
+
+{ #category : 'baselines' }
 BaselineOfAlSitExDataFrame >> baseline: spec [
 	<baseline>
 
@@ -20,4 +31,10 @@ BaselineOfAlSitExDataFrame >> baseline: spec [
 		spec package: 'AlSitEx-DataFrame' with: [ spec requires: #('DataFrame') , self illimaniStringDependencies ].
 
 		spec group: 'Core' with: #( 'AlSitEx-DataFrame' ) ]
+]
+
+{ #category : 'baselines' }
+BaselineOfAlSitExDataFrame >> illimaniStringDependencies [
+
+	^ #( 'IllimaniProfiler' 'SendersChainTransformer' )
 ]
