@@ -1,6 +1,6 @@
 Class {
 	#name : 'BaselineOfAlSitExDataFrame',
-	#superclass : 'AbstractBaselineOfAlSitEx',
+	#superclass : 'BaselineOf',
 	#category : 'BaselineOfAlSitExDataFrame',
 	#package : 'BaselineOfAlSitExDataFrame'
 }
