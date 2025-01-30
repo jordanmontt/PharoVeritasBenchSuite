@@ -36,7 +36,7 @@ AlSitExCormas >> applicationPackages [
 { #category : 'api' }
 AlSitExCormas >> run [
 
-	self runEcecModelFor: 10000
+	self runEcecModelFor: 200000
 ]
 
 { #category : 'as yet unclassified' }
