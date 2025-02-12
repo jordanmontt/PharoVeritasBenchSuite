@@ -1,6 +1,6 @@
 Class {
 	#name : 'BaselineOfAlSitExReMobidyc',
-	#superclass : 'Object',
+	#superclass : 'BaselineOf',
 	#category : 'BaselineOfAlSitExReMobidyc',
 	#package : 'BaselineOfAlSitExReMobidyc'
 }
