@@ -1,6 +1,6 @@
 Extension { #name : 'RBSmalllintChecker' }
 
-{ #category : '*AlSitExRewriter' }
+{ #category : '*AlSitEx-Rewriter' }
 RBSmalllintChecker >> run [
 
 	environment classes do: [ :class |

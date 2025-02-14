@@ -1,8 +1,8 @@
 Class {
 	#name : 'AlSitExRewriter',
 	#superclass : 'Object',
-	#category : 'AlSitExRewriter-Objects',
-	#package : 'AlSitExRewriter',
+	#category : 'AlSitEx-Rewriter-Objects',
+	#package : 'AlSitEx-Rewriter',
 	#tag : 'Objects'
 }
 

@@ -1,6 +1,6 @@
 Extension { #name : 'StRewriterExpressionFinderPresenter' }
 
-{ #category : '*AlSitExRewriter' }
+{ #category : '*AlSitEx-Rewriter' }
 StRewriterExpressionFinderPresenter >> searchExpressionOnAllClasses [
 
 	| dialogWindow methods ruleHolder critiques |
