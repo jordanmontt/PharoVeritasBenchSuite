@@ -16,6 +16,6 @@ AlSitExRewriterTransformer >> run [
 		              isForMethod: false.
 	changes := StRewriterAbstractApplier defaultEngineApplier
 				calculateAllChangesForRules: (OrderedCollection with: ruleHolder).
-	RBRefactoryChangeManager instance performChanges: changes.
+	"RBRefactoryChangeManager instance performChanges: changes."
 	^ changes
 ]
