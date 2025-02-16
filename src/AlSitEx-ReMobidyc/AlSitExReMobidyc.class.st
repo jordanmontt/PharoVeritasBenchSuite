@@ -5,6 +5,15 @@ Class {
 	#package : 'AlSitEx-ReMobidyc'
 }
 
+{ #category : 'as yet unclassified' }
+AlSitExReMobidyc class >> applicationPackages [
+
+	^ #( #'ReMobidyc-Storage' #'ReMobidyc-DataSource' #'ReMobidyc-Units-Tests' #'ReMobidyc-Language-Tests'
+	     #'ReMobidyc-Spec2' #'ReMobidyc-Interpreter-Tests' #'ReMobidyc-Storage-Tests' #'ReMobidyc-Language'
+	     #'ReMobidyc-Visualization' #'ReMobidyc-Visualization-Tests' #'ReMobidyc-Units' #'ReMobidyc-Interpreter'
+	     #'ReMobidyc-Repository' ) collect: #asPackage
+]
+
 { #category : 'running' }
 AlSitExReMobidyc >> run [
 
