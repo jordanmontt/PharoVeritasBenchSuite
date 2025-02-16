@@ -21,7 +21,7 @@ BaselineOfAlSitExReMobidyc >> baseline: spec [
 
 	<baseline>
 	spec for: #common do: [
-		spec package: 'ACEx-ReMobidyc'.
+		spec package: 'AlSitEx-ReMobidyc'.
 
 		self addIllimaniDependencies: spec.
 		
@@ -30,9 +30,9 @@ BaselineOfAlSitExReMobidyc >> baseline: spec [
 			with: [ spec repository: 'github://jordanmontt/ReMobidyc:main' ].
 
 		"Linking"
-		spec package: 'ACEx-ReMobidyc' with: [ 
+		spec package: 'AlSitEx-ReMobidyc' with: [ 
 			spec requires: #( 'ReMobidyc' 'IllimaniProfiler' 'SendersChainTransformer') ].
 
 		"Groups"
-		spec group: 'Core' with: #( 'ACEx-ReMobidyc' ) ]
+		spec group: 'Core' with: #( 'AlSitEx-ReMobidyc' ) ]
 ]
