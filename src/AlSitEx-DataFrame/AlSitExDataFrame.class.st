@@ -14,10 +14,7 @@ AlSitExDataFrame class >> applicationClasses [
 { #category : 'as yet unclassified' }
 AlSitExDataFrame class >> applicationPackages [
 
-	^ #( #BaselineOfDataFrame #'DataFrame-IO' #'Neo-JSON-Pharo-Tests' #DataFrame #'Neo-JSON-Pharo-Core'
-	     #'Neo-JSON-Core' #'AI-Normalization-Tests' #'Neo-JSON-Tests' #'DataFrame-IO-Tests' #'AlSitEx-DataFrame'
-	     #BaselineOfAlSitExDataFrame #'AI-Normalization' #'Neo-CSV-Tests' #'DataFrame-Tests' #'Neo-CSV-Core'
-	     #BaselineOfAINormalization ) collect: #asPackage
+	^ #( #'DataFrame-IO' #DataFrame ) collect: #asPackage
 ]
 
 { #category : 'as yet unclassified' }
