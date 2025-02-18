@@ -31,8 +31,8 @@ AlSitExDataFrame >> applicationPackages [
 
 { #category : 'running' }
 AlSitExDataFrame >> run [
-	"self runSyntheticOneHundredTimes"
-	^ self runSyntheticFiftyTimes
+	"self runSyntheticFiftyTimes"
+	^ self runSyntheticFiveHundredTimes
 ]
 
 { #category : 'running' }
@@ -74,6 +74,16 @@ AlSitExDataFrame >> runSyntheticFiftyTimes [
 	It weights 117 MB. It has 1000000 rows and 5 columns. It contains only numbers"
 	| file |
 	file := (FileLocator imageDirectory / 'tiny_fifty_times_larger_dataset.csv') asFileReference.
+	^ DataFrame readFromCsv: file
+]
+
+{ #category : 'running' }
+AlSitExDataFrame >> runSyntheticFiveHundredTimes [ 
+	"This is a small synthetic dataset generated using make_regression of sklearn.
+	It weights 230 MB. It has 2000000 rows and 5 columns. It contains only numbers"
+
+	| file |
+	file := (FileLocator imageDirectory / 'tiny_five_hundred_times_larger_dataset.csv') asFileReference.
 	^ DataFrame readFromCsv: file
 ]
 
