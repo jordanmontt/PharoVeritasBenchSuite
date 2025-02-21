@@ -14,11 +14,9 @@ AlSitExCormas class >> applicationClasses [
 { #category : 'as yet unclassified' }
 AlSitExCormas class >> applicationPackages [
 
-	^ #( #'Cormas-SensitivityAnalysis-UI-Tests' #'Cormas-UI-Tilesets' #'AlSitEx-Cormas' #'Cormas-Core' #BaselineOfCormas
-	     #BaselineOfECECModel #'Cormas-UI-Translator' #'ECEC-Model' #'Cormas-Tests' #'Cormas-UI-Roassal3'
-	     #BaselineOfAlSitExCormas #'Cormas-UI-Commands' #'ECEC-Model-Tests' #'Cormas-CodeGeneration'
-	     #'Cormas-UI-Tests' #'Cormas-SensitivityAnalysis' #'Cormas-SensitivityAnalysis-Tests'
-	     #'Cormas-SensitivityAnalysis-UI' #'Cormas-CodeGeneration-Tests' #'Cormas-UI' #'Cormas-Mocks' ) collect: #asPackage
+	^ #( #'Cormas-UI-Tilesets' #'Cormas-Core' #'Cormas-UI-Translator' #'ECEC-Model' #'Cormas-UI-Roassal3'
+	     #'Cormas-UI-Commands' #'Cormas-CodeGeneration' #'Cormas-SensitivityAnalysis' #'Cormas-SensitivityAnalysis-UI'
+	     #'Cormas-UI' #'Cormas-Mocks' ) collect: #asPackage
 ]
 
 { #category : 'as yet unclassified' }
