@@ -7,7 +7,8 @@ sendersToPretenure := MethodWithOffsetSerializer new
 
 "To rewrite the senders"
 AllocationSitesExperiment new 
-	sendersToPretenure: sendersToPretenure.
+	sendersToPretenure: sendersToPretenure;
+	rewriteAllocationSites.
 
 profiler := IllMemoryProfiler new
 	profileOn: [ AlSitExCormas new run ];
