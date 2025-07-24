@@ -1,22 +1,32 @@
 
 ```st
-| profiler experiment json sendersToPretenure |
+| profiler experiment json sendersToPretenure benchmarkClass |
+"General setting"
+benchmarkClass := AlSitExDataFrame.
+
+
+""""""
+"To rewrite the senders"
 json := 'file-name.json' asFileReference contents.
 sendersToPretenure := MethodWithOffsetSerializer new
 	deserialize: json.
-
-"To rewrite the senders"
 AllocationSitesExperiment new 
 	sendersToPretenure: sendersToPretenure;
 	rewriteAllocationSites.
 
+
+""""""
+"To Profile and export the senders"
 profiler := IllMemoryProfiler new
-	profileOn: [ AlSitExCormas new run ];
+	profileOn: [ benchmarkClass new run ];
 	yourself.
 
-"This exports the senders in a json file"
-(AllocationSitesExperiment onProfiler: profiler)
-	allocationSiteStrategy: (MethodFromTheSamePackageStrategy 
-			packagesToMatch: AlSitExCormas applicationPackages);
-	run.
+experiment := AllocationSitesExperiment onProfiler: profiler.
+experiment allocationSiteStrategy: (MethodFromTheSamePackageStrategy 
+	packagesToMatch: benchmarkClass applicationPackages).
+experiment run: 'method'.
+
+experiment := AllocationSitesExperiment onProfiler: profiler.
+experiment useTextualLocationStrategy.
+experiment run: 'textual'
 ```
