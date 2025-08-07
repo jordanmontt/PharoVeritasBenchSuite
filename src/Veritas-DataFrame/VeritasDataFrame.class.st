@@ -1,49 +1,49 @@
 Class {
-	#name : 'AlSitExDataFrame',
+	#name : 'VeritasDataFrame',
 	#superclass : 'Object',
-	#category : 'AlSitEx-DataFrame',
-	#package : 'AlSitEx-DataFrame'
+	#category : 'Veritas-DataFrame',
+	#package : 'Veritas-DataFrame'
 }
 
 { #category : 'as yet unclassified' }
-AlSitExDataFrame class >> applicationClasses [
+VeritasDataFrame class >> applicationClasses [
 
 	^ self applicationPackages flatCollect: #definedClasses
 ]
 
 { #category : 'as yet unclassified' }
-AlSitExDataFrame class >> applicationPackages [
+VeritasDataFrame class >> applicationPackages [
 
 	^ #( #'DataFrame-IO' #DataFrame ) collect: #asPackage
 ]
 
 { #category : 'as yet unclassified' }
-AlSitExDataFrame >> applicationClasses [
+VeritasDataFrame >> applicationClasses [
 
 	^ self class applicationClasses
 ]
 
 { #category : 'as yet unclassified' }
-AlSitExDataFrame >> applicationPackages [
+VeritasDataFrame >> applicationPackages [
 
 	^ self class applicationPackages
 ]
 
 { #category : 'running' }
-AlSitExDataFrame >> run [
+VeritasDataFrame >> run [
 	"self runSyntheticOneHundredTimes"
 	^ self runSyntheticFiftyTimes
 ]
 
 { #category : 'running' }
-AlSitExDataFrame >> runAWS1dot6GB [
+VeritasDataFrame >> runAWS1dot6GB [
 	"https://www.kaggle.com/datasets/rahulbanerjee123/aws-product-length?resource=download (529
 	MB and 1.6 GB)"
 	^ DataFrame readFromCsv: '/Users/sebastian/Documents/Experiments/ACEx/AWS Product Length/train.csv' asFileReference
 ]
 
 { #category : 'running' }
-AlSitExDataFrame >> runProtein1dot14GB [
+VeritasDataFrame >> runProtein1dot14GB [
 	"1.14 GB"
 	^ DataFrame readFromCsv:
 		  '/Users/sebastian/Documents/Experiments/ACEx/CITEseq22 Protein-RNA vs RNA Spearman cor data/Prot-RNA_corr_21gr.csv'
@@ -51,7 +51,7 @@ AlSitExDataFrame >> runProtein1dot14GB [
 ]
 
 { #category : 'running' }
-AlSitExDataFrame >> runProtein3GB [
+VeritasDataFrame >> runProtein3GB [
 	"https://www.kaggle.com/datasets/antoninadolgorukova/proteinrna-vs-rna-spearman-correlation-data? select=Prot-RNA_corr_63gr.csv (3.1 GB)"
 	^ DataFrame readFromCsv:
 		  '/Users/sebastian/Documents/Experiments/ACEx/CITEseq22 Protein-RNA vs RNA Spearman cor data/Prot-RNA_corr_63gr.csv'
@@ -59,7 +59,7 @@ AlSitExDataFrame >> runProtein3GB [
 ]
 
 { #category : 'running' }
-AlSitExDataFrame >> runSynthetic [
+VeritasDataFrame >> runSynthetic [
 	"This is a small synthetic dataset generated using make_regression of sklearn.
 	It weights 2.3 MB. It has 20000 rows and 5 columns. It contains only numbers"
 	| file |
@@ -68,7 +68,7 @@ AlSitExDataFrame >> runSynthetic [
 ]
 
 { #category : 'running' }
-AlSitExDataFrame >> runSyntheticFiftyTimes [
+VeritasDataFrame >> runSyntheticFiftyTimes [
 	"This is a small synthetic dataset generated using make_regression of sklearn. The code is
 	at https://github.com/jordanmontt/lapack-experiment.
 	It weights 117 MB. It has 1000000 rows and 5 columns. It contains only numbers"
@@ -78,7 +78,7 @@ AlSitExDataFrame >> runSyntheticFiftyTimes [
 ]
 
 { #category : 'running' }
-AlSitExDataFrame >> runSyntheticFiveHundredTimes [ 
+VeritasDataFrame >> runSyntheticFiveHundredTimes [ 
 	"This is a small synthetic dataset generated using make_regression of sklearn.
 	It weights 230 MB. It has 2000000 rows and 5 columns. It contains only numbers"
 
@@ -88,7 +88,7 @@ AlSitExDataFrame >> runSyntheticFiveHundredTimes [
 ]
 
 { #category : 'running' }
-AlSitExDataFrame >> runSyntheticOneHundredTimes [ 
+VeritasDataFrame >> runSyntheticOneHundredTimes [ 
 	"This is a small synthetic dataset generated using make_regression of sklearn.
 	It weights 230 MB. It has 2000000 rows and 5 columns. It contains only numbers"
 
@@ -98,7 +98,7 @@ AlSitExDataFrame >> runSyntheticOneHundredTimes [
 ]
 
 { #category : 'running' }
-AlSitExDataFrame >> runSyntheticTenTimes [
+VeritasDataFrame >> runSyntheticTenTimes [
 	"This is a small synthetic dataset generated using make_regression of sklearn.
 	It weights 23 MB. It has 200000 rows and 5 columns. It contains only numbers"
 	| file |
