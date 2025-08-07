@@ -12,10 +12,10 @@ BaselineOfVeritasRegis >> baseline: spec [
 	self preLoad.
 
 	spec for: #common do: [
-		spec package: 'ACEx-Regis'.
+		spec package: 'Veritas-Regis'.
 
 		"Groups"
-		spec group: 'Core' with: #( 'ACEx-Regis' ) ]
+		spec group: 'Core' with: #( 'Veritas-Regis' ) ]
 ]
 
 { #category : 'baselines' }
