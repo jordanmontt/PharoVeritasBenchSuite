@@ -1,18 +1,18 @@
 Class {
-	#name : 'AlSitExCormas',
+	#name : 'VeritasCormas',
 	#superclass : 'Object',
-	#category : 'AlSitEx-Cormas',
-	#package : 'AlSitEx-Cormas'
+	#category : 'Veritas-Cormas',
+	#package : 'Veritas-Cormas'
 }
 
 { #category : 'as yet unclassified' }
-AlSitExCormas class >> applicationClasses [
+VeritasCormas class >> applicationClasses [
 
 	^ self applicationPackages flatCollect: #definedClasses
 ]
 
 { #category : 'as yet unclassified' }
-AlSitExCormas class >> applicationPackages [
+VeritasCormas class >> applicationPackages [
 
 	^ #( #'Cormas-UI-Tilesets' #'Cormas-Core' #'Cormas-UI-Translator' #'ECEC-Model' #'Cormas-UI-Roassal3'
 	     #'Cormas-UI-Commands' #'Cormas-CodeGeneration' #'Cormas-SensitivityAnalysis' #'Cormas-SensitivityAnalysis-UI'
@@ -20,25 +20,25 @@ AlSitExCormas class >> applicationPackages [
 ]
 
 { #category : 'as yet unclassified' }
-AlSitExCormas >> applicationClasses [
+VeritasCormas >> applicationClasses [
 
 	^ self class applicationClasses
 ]
 
 { #category : 'as yet unclassified' }
-AlSitExCormas >> applicationPackages [
+VeritasCormas >> applicationPackages [
 
 	^ self class applicationPackages
 ]
 
 { #category : 'api' }
-AlSitExCormas >> run [
+VeritasCormas >> run [
 
 	self runEcecModelFor: 200000
 ]
 
 { #category : 'as yet unclassified' }
-AlSitExCormas >> runEcecModelFor: durationSteps [
+VeritasCormas >> runEcecModelFor: durationSteps [
 
 	| simulation |
 	simulation := (CMSimulation for: ECECModel)

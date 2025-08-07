@@ -21,11 +21,11 @@ BaselineOfVeritasReMobidyc >> baseline: spec [
 
 	<baseline>
 	spec for: #common do: [
-		spec package: 'AlSitEx-ReMobidyc'.
+		spec package: 'Veritas-ReMobidyc'.
 		
 		"External dependencies"
 		spec baseline: 'ReMobidyc' with: [ spec repository: 'github://jordanmontt/ReMobidyc:main' ].
 
 		"Groups"
-		spec group: 'Core' with: #( 'AlSitEx-ReMobidyc' ) ]
+		spec group: 'Core' with: #( 'Veritas-ReMobidyc' ) ]
 ]
