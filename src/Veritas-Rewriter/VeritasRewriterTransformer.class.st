@@ -1,13 +1,13 @@
 Class {
-	#name : 'AlSitExRewriterTransformer',
+	#name : 'VeritasRewriterTransformer',
 	#superclass : 'Object',
-	#category : 'AlSitEx-Rewriter-Objects',
-	#package : 'AlSitEx-Rewriter',
+	#category : 'Veritas-Rewriter-Objects',
+	#package : 'Veritas-Rewriter',
 	#tag : 'Objects'
 }
 
 { #category : 'running' }
-AlSitExRewriterTransformer >> run [
+VeritasRewriterTransformer >> run [
 
 	| ruleHolder changes |
 	ruleHolder := StRewriterRuleHolder

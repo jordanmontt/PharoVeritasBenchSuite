@@ -1,12 +1,12 @@
 Class {
-	#name : 'AlSitExReMobidyc',
+	#name : 'VeritasReMobidyc',
 	#superclass : 'Object',
-	#category : 'AlSitEx-ReMobidyc',
-	#package : 'AlSitEx-ReMobidyc'
+	#category : 'Veritas-ReMobidyc',
+	#package : 'Veritas-ReMobidyc'
 }
 
 { #category : 'as yet unclassified' }
-AlSitExReMobidyc class >> applicationPackages [
+VeritasReMobidyc class >> applicationPackages [
 
 	^ #( #'ReMobidyc-Storage' #'ReMobidyc-DataSource' #'ReMobidyc-Units-Tests' #'ReMobidyc-Language-Tests'
 	     #'ReMobidyc-Spec2' #'ReMobidyc-Interpreter-Tests' #'ReMobidyc-Storage-Tests' #'ReMobidyc-Language'
@@ -15,7 +15,7 @@ AlSitExReMobidyc class >> applicationPackages [
 ]
 
 { #category : 'running' }
-AlSitExReMobidyc >> run [
+VeritasReMobidyc >> run [
 
 	| model metainterpreter semaphore |
 	semaphore := Semaphore new.

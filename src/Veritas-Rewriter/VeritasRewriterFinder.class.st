@@ -1,13 +1,13 @@
 Class {
-	#name : 'AlSitExRewriterFinder',
+	#name : 'VeritasRewriterFinder',
 	#superclass : 'Object',
-	#category : 'AlSitEx-Rewriter-Objects',
-	#package : 'AlSitEx-Rewriter',
+	#category : 'Veritas-Rewriter-Objects',
+	#package : 'Veritas-Rewriter',
 	#tag : 'Objects'
 }
 
 { #category : 'running' }
-AlSitExRewriterFinder >> run [
+VeritasRewriterFinder >> run [
 	"Search among all Pharo methods the ones that have the patter (rcv collect: arg) flattened"
 	| methods ruleHolder |
 	methods := Smalltalk environment allMethods asSet.
