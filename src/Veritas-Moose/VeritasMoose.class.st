@@ -1,19 +1,19 @@
 Class {
-	#name : 'AlSitExMoose',
+	#name : 'VeritasMoose',
 	#superclass : 'Object',
-	#category : 'AlSitEx-Moose-Objects',
-	#package : 'AlSitEx-Moose',
+	#category : 'Veritas-Moose-Objects',
+	#package : 'Veritas-Moose',
 	#tag : 'Objects'
 }
 
 { #category : 'as yet unclassified' }
-AlSitExMoose class >> applicationPackages [
+VeritasMoose class >> applicationPackages [
 
 	^ self packageNames collect: #asPackage
 ]
 
 { #category : 'as yet unclassified' }
-AlSitExMoose class >> packageNames [
+VeritasMoose class >> packageNames [
 
 	^ #( #'MooseIDE-Visualization' #'Moose-TestResources-KGB-P14FullReferee' #'Moose-SmalltalkImporter'
 	     #'Moose-Blueprint-Invocations-Models' #'Moose-TestResources-KGB-P7ReferencerReferee'
@@ -48,7 +48,7 @@ AlSitExMoose class >> packageNames [
 ]
 
 { #category : 'running' }
-AlSitExMoose >> run [
+VeritasMoose >> run [
 
 	| model inputFile |
 	model := FamixJavaModel new.
