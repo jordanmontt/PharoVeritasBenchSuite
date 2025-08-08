@@ -1,107 +1,82 @@
 Class {
 	#name : 'VeritasDataFrame',
-	#superclass : 'Object',
+	#superclass : 'VeritasBenchSuite',
 	#category : 'Veritas-DataFrame',
 	#package : 'Veritas-DataFrame'
 }
 
-{ #category : 'as yet unclassified' }
-VeritasDataFrame class >> applicationClasses [
-
-	^ self applicationPackages flatCollect: #definedClasses
-]
-
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 VeritasDataFrame class >> applicationPackages [
 
 	^ #( #'DataFrame-IO' #DataFrame ) collect: #asPackage
 ]
 
-{ #category : 'as yet unclassified' }
-VeritasDataFrame >> applicationClasses [
+{ #category : 'utilities' }
+VeritasDataFrame >> loadFileInDataFrame: aFileName [
 
-	^ self class applicationClasses
+	| file |
+	file := (FileLocator imageDirectory / aFileName) asFileReference.
+	^ DataFrame readFromCsv: file
 ]
 
-{ #category : 'as yet unclassified' }
-VeritasDataFrame >> applicationPackages [
-
-	^ self class applicationPackages
-]
-
-{ #category : 'running' }
+{ #category : 'api' }
 VeritasDataFrame >> run [
 	"self runSyntheticOneHundredTimes"
 	^ self runSyntheticFiftyTimes
 ]
 
 { #category : 'running' }
-VeritasDataFrame >> runAWS1dot6GB [
-	"https://www.kaggle.com/datasets/rahulbanerjee123/aws-product-length?resource=download (529
-	MB and 1.6 GB)"
-	^ DataFrame readFromCsv: '/Users/sebastian/Documents/Experiments/ACEx/AWS Product Length/train.csv' asFileReference
-]
-
-{ #category : 'running' }
-VeritasDataFrame >> runProtein1dot14GB [
-	"1.14 GB"
-	^ DataFrame readFromCsv:
-		  '/Users/sebastian/Documents/Experiments/ACEx/CITEseq22 Protein-RNA vs RNA Spearman cor data/Prot-RNA_corr_21gr.csv'
-			  asFileReference
-]
-
-{ #category : 'running' }
-VeritasDataFrame >> runProtein3GB [
-	"https://www.kaggle.com/datasets/antoninadolgorukova/proteinrna-vs-rna-spearman-correlation-data? select=Prot-RNA_corr_63gr.csv (3.1 GB)"
-	^ DataFrame readFromCsv:
-		  '/Users/sebastian/Documents/Experiments/ACEx/CITEseq22 Protein-RNA vs RNA Spearman cor data/Prot-RNA_corr_63gr.csv'
-			  asFileReference
-]
-
-{ #category : 'running' }
-VeritasDataFrame >> runSynthetic [
-	"This is a small synthetic dataset generated using make_regression of sklearn.
-	It weights 2.3 MB. It has 20000 rows and 5 columns. It contains only numbers"
-	| file |
-	file := (FileLocator imageDirectory / 'tiny_dataset.csv') asFileReference.
-	^ DataFrame readFromCsv: file
-]
-
-{ #category : 'running' }
 VeritasDataFrame >> runSyntheticFiftyTimes [
-	"This is a small synthetic dataset generated using make_regression of sklearn. The code is
-	at https://github.com/jordanmontt/lapack-experiment.
-	It weights 117 MB. It has 1000000 rows and 5 columns. It contains only numbers"
-	| file |
-	file := (FileLocator imageDirectory / 'tiny_fifty_times_larger_dataset.csv') asFileReference.
-	^ DataFrame readFromCsv: file
+	"This is a synthetic dataset generated using make_regression of sklearn. 
+	It weights 117 MB. It has 1,000,000 rows and 5 columns. It contains only numbers"
+
+	self loadFileInDataFrame: 'tiny_fifty_times_larger_dataset.csv'
 ]
 
 { #category : 'running' }
 VeritasDataFrame >> runSyntheticFiveHundredTimes [ 
 	"This is a small synthetic dataset generated using make_regression of sklearn.
-	It weights 230 MB. It has 2000000 rows and 5 columns. It contains only numbers"
+	It weights 1150 MB. It has 10,000,000 rows and 5 columns. It contains only numbers"
 
-	| file |
-	file := (FileLocator imageDirectory / 'tiny_five_hundred_times_larger_dataset.csv') asFileReference.
-	^ DataFrame readFromCsv: file
+	self loadFileInDataFrame: 'tiny_five_hundred_times_larger_dataset.csv'
 ]
 
 { #category : 'running' }
-VeritasDataFrame >> runSyntheticOneHundredTimes [ 
-	"This is a small synthetic dataset generated using make_regression of sklearn.
-	It weights 230 MB. It has 2000000 rows and 5 columns. It contains only numbers"
+VeritasDataFrame >> runSyntheticOneHundredTimes [
+	"This is a synthetic dataset generated using make_regression of sklearn.
+	It weights 234 MB. It has 2,000,000 rows and 5 columns. It contains only numbers"
 
-	| file |
-	file := (FileLocator imageDirectory / 'tiny_one_hundred_times_larger_dataset.csv') asFileReference.
-	^ DataFrame readFromCsv: file
+	self loadFileInDataFrame: 'tiny_one_hundred_times_larger_dataset.csv'
+]
+
+{ #category : 'running' }
+VeritasDataFrame >> runSyntheticOneThousandTimes [
+	"This is a synthetic dataset generated using make_regression of sklearn.
+	It weights 2,34 GB. It has 20,000,000 rows and 5 columns. It contains only numbers"
+
+	self loadFileInDataFrame: 'tiny_one_hundred_times_larger_dataset.csv'
 ]
 
 { #category : 'running' }
 VeritasDataFrame >> runSyntheticTenTimes [
+	"This is a synthetic dataset generated using make_regression of sklearn.
+	It weights 23 MB. It has 200,000 rows and 5 columns. It contains only numbers"
+
+	self loadFileInDataFrame: 'tiny_ten_times_larger_dataset.csv'
+]
+
+{ #category : 'running' }
+VeritasDataFrame >> runSyntheticTwoHundredTimes [
+	"This is a synthetic dataset generated using make_regression of sklearn.
+	It weights 468 MB. It has 4,000,000 rows and 5 columns. It contains only numbers"
+
+	self loadFileInDataFrame: 'tiny_two_hundred_times_larger_dataset.csv'
+]
+
+{ #category : 'running' }
+VeritasDataFrame >> runTinySynthetic [
 	"This is a small synthetic dataset generated using make_regression of sklearn.
-	It weights 23 MB. It has 200000 rows and 5 columns. It contains only numbers"
-	| file |
-	file := (FileLocator imageDirectory / 'tiny_ten_times_larger_dataset.csv') asFileReference.
-	^ DataFrame readFromCsv: file
+	It weights 2,3 MB. It has 20,000 rows and 5 columns. It contains only numbers"
+
+	self loadFileInDataFrame: 'tiny_dataset.csv'
 ]

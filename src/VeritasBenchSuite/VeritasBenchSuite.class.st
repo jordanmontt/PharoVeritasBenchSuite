@@ -1,0 +1,36 @@
+Class {
+	#name : 'VeritasBenchSuite',
+	#superclass : 'Object',
+	#category : 'VeritasBenchSuite',
+	#package : 'VeritasBenchSuite'
+}
+
+{ #category : 'accessing' }
+VeritasBenchSuite class >> applicationClasses [
+
+	^ self applicationPackages flatCollect: #definedClasses
+]
+
+{ #category : 'accessing' }
+VeritasBenchSuite class >> applicationPackages [
+
+	^ {  }
+]
+
+{ #category : 'accessing' }
+VeritasBenchSuite >> applicationClasses [
+
+	^ self class applicationClasses
+]
+
+{ #category : 'accessing' }
+VeritasBenchSuite >> applicationPackages [
+
+	^ self class applicationPackages
+]
+
+{ #category : 'api' }
+VeritasBenchSuite >> run [
+
+	^ self subclassResponsibility
+]
