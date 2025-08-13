@@ -11,15 +11,13 @@ BaselineOfVeritasHoneyGinger >> baseline: spec [
 	<baseline>
 	
 	spec for: #'common' do: [
-		spec package: 'Veritas-HoneyGinger'.
+		spec package: 'VeritasBenchSuite'.
+		spec package: 'Veritas-HoneyGinger' with: [ spec requires: #( 'VeritasBenchSuite' ) ].
 		
 		"External dependencies"
 		spec baseline: 'HoneyGinger'
 			with: [ spec repository: 'github://tomooda/HoneyGinger:main' ].
-		
-		"Linking external dependencies"
-		spec package: 'Veritas-HoneyGinger'
-			with: [ spec requires: #('HoneyGinger') ].
+		spec package: 'Veritas-HoneyGinger' with: [ spec requires: #('HoneyGinger') ].
 		
 		"Groups"
 		spec group: 'Core' with: #( 'Veritas-HoneyGinger' ) ]

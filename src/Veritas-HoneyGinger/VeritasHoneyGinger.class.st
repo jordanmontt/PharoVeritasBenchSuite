@@ -1,6 +1,6 @@
 Class {
 	#name : 'VeritasHoneyGinger',
-	#superclass : 'Object',
+	#superclass : 'VeritasBenchSuite',
 	#instVars : [
 		'renderingCycles'
 	],
