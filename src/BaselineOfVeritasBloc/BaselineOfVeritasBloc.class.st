@@ -10,16 +10,14 @@ BaselineOfVeritasBloc >> baseline: spec [
 	<baseline>
 
 	spec for: #'common' do: [
-		spec package: 'Veritas-Bloc'.
+		spec package: 'VeritasBenchSuite'.
+		spec package: 'Veritas-Bloc' with: [ spec requires: #( 'VeritasBenchSuite' ) ].
 
 		"External dependencies"
 		spec
  			baseline: 'BlocBenchs'
 			with: [ spec repository: 'github://pharo-graphics/BlocBenchs:master/src' ].
-
-		"Linking external dependencies"
-		spec package: 'Veritas-Bloc'
-			with: [ spec requires: #('BlocBenchs') ].
+		spec package: 'Veritas-Bloc' with: [ spec requires: #('BlocBenchs') ].
 
 		"Groups"
 		spec group: 'Core' with: #( 'Veritas-Bloc' ) ]

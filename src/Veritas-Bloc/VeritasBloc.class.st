@@ -1,6 +1,6 @@
 Class {
 	#name : 'VeritasBloc',
-	#superclass : 'Object',
+	#superclass : 'VeritasBenchSuite',
 	#category : 'Veritas-Bloc',
 	#package : 'Veritas-Bloc'
 }
