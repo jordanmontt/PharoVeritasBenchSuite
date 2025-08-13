@@ -10,7 +10,8 @@ BaselineOfVeritasRewriter >> baseline: spec [
 
 	<baseline>
 	spec for: #common do: [
-			spec package: 'Veritas-Rewriter'.
+		spec package: 'VeritasBenchSuite'.
+		spec package: 'Veritas-Rewriter' with: [ spec requires: #( 'VeritasBenchSuite' ) ].
 
 			spec group: 'Core' with: #( 'Veritas-Rewriter' ) ]
 ]

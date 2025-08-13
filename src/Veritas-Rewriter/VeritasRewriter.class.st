@@ -1,6 +1,6 @@
 Class {
 	#name : 'VeritasRewriter',
-	#superclass : 'Object',
+	#superclass : 'VeritasBenchSuite',
 	#category : 'Veritas-Rewriter-Objects',
 	#package : 'Veritas-Rewriter',
 	#tag : 'Objects'

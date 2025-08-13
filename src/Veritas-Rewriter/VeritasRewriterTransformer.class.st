@@ -1,6 +1,6 @@
 Class {
 	#name : 'VeritasRewriterTransformer',
-	#superclass : 'Object',
+	#superclass : 'VeritasRewriter',
 	#category : 'Veritas-Rewriter-Objects',
 	#package : 'Veritas-Rewriter',
 	#tag : 'Objects'

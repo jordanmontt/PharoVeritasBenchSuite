@@ -1,6 +1,6 @@
 Class {
 	#name : 'VeritasMoose',
-	#superclass : 'Object',
+	#superclass : 'VeritasBenchSuite',
 	#category : 'Veritas-Moose-Objects',
 	#package : 'Veritas-Moose',
 	#tag : 'Objects'

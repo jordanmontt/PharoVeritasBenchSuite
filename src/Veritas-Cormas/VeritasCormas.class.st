@@ -1,15 +1,9 @@
 Class {
 	#name : 'VeritasCormas',
-	#superclass : 'Object',
+	#superclass : 'VeritasBenchSuite',
 	#category : 'Veritas-Cormas',
 	#package : 'Veritas-Cormas'
 }
-
-{ #category : 'as yet unclassified' }
-VeritasCormas class >> applicationClasses [
-
-	^ self applicationPackages flatCollect: #definedClasses
-]
 
 { #category : 'as yet unclassified' }
 VeritasCormas class >> applicationPackages [
@@ -17,18 +11,6 @@ VeritasCormas class >> applicationPackages [
 	^ #( #'Cormas-UI-Tilesets' #'Cormas-Core' #'Cormas-UI-Translator' #'ECEC-Model' #'Cormas-UI-Roassal3'
 	     #'Cormas-UI-Commands' #'Cormas-CodeGeneration' #'Cormas-SensitivityAnalysis' #'Cormas-SensitivityAnalysis-UI'
 	     #'Cormas-UI' #'Cormas-Mocks' ) collect: #asPackage
-]
-
-{ #category : 'as yet unclassified' }
-VeritasCormas >> applicationClasses [
-
-	^ self class applicationClasses
-]
-
-{ #category : 'as yet unclassified' }
-VeritasCormas >> applicationPackages [
-
-	^ self class applicationPackages
 ]
 
 { #category : 'api' }
