@@ -4,7 +4,7 @@ Veritas is a collection of Pharo applications. For each application, Veritas pro
 
 ## How to use
 
-You just need to call the method `run`. For example `VeritasDataFrame new run`.
+You just need to call the method `run`. For example `VeritasRewriterTransformer new run`.
 
 Pay attention that some benchmarks need some pre treatment. For example, the DataFrame benchmark needs a dataset (a csv file), so you need to place the file in the same directory of the image. Then Veritas just executes the benchmark.
 
