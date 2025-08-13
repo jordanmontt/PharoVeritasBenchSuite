@@ -8,6 +8,12 @@ Class {
 	#package : 'Veritas-HoneyGinger'
 }
 
+{ #category : 'accessing' }
+VeritasHoneyGinger class >> applicationPackages [
+
+	^ #( 'HoneyGinger' ) collect: #asPackage
+]
+
 { #category : 'initialization' }
 VeritasHoneyGinger >> initialize [
 
