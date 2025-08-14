@@ -5,23 +5,13 @@ Class {
 	#package : 'BaselineOfVeritasReMobidyc'
 }
 
-{ #category : 'adding' }
-BaselineOfVeritasReMobidyc >> addIllimaniDependencies: spec [
-
-	spec
- 		baseline: 'IllimaniProfiler'
-		with: [ spec repository: 'github://jordanmontt/illimani-memory-profiler:dev' ].
-	spec
- 		baseline: 'SendersChainTransformer'
-		with: [ spec repository: 'github://jordanmontt/senders-chain-transformer:main' ]
-]
-
 { #category : 'baselines' }
 BaselineOfVeritasReMobidyc >> baseline: spec [
 
 	<baseline>
 	spec for: #common do: [
-		spec package: 'Veritas-ReMobidyc'.
+		spec package: 'VeritasBenchSuite'.
+		spec package: 'Veritas-ReMobidyc' with: [ spec requires: #('VeritasBenchSuite') ] .
 		
 		"External dependencies"
 		spec baseline: 'ReMobidyc' with: [ spec repository: 'github://jordanmontt/ReMobidyc:main' ].

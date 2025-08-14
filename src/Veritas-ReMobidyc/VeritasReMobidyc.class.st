@@ -1,6 +1,6 @@
 Class {
 	#name : 'VeritasReMobidyc',
-	#superclass : 'Object',
+	#superclass : 'VeritasBenchSuite',
 	#category : 'Veritas-ReMobidyc',
 	#package : 'Veritas-ReMobidyc'
 }
@@ -14,7 +14,7 @@ VeritasReMobidyc class >> applicationPackages [
 	     #'ReMobidyc-Repository' ) collect: #asPackage
 ]
 
-{ #category : 'running' }
+{ #category : 'api' }
 VeritasReMobidyc >> run [
 
 	| model metainterpreter semaphore |
