@@ -12,6 +12,15 @@ VeritasBenchSuite class >> applicationClasses [
 ]
 
 { #category : 'accessing' }
+VeritasBenchSuite class >> applicationMethods [
+
+	| instanceSideMethods classSideMethods |
+	instanceSideMethods := self applicationClasses flatCollect: #methods as: Set.
+	classSideMethods := (self applicationClasses collect: #class) flatCollect: #methods as: Set.
+	^ instanceSideMethods , classSideMethods
+]
+
+{ #category : 'accessing' }
 VeritasBenchSuite class >> applicationPackages [
 
 	^ {  }
