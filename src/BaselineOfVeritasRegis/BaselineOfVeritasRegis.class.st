@@ -9,24 +9,14 @@ Class {
 BaselineOfVeritasRegis >> baseline: spec [
 
 	<baseline>
-	self preLoad.
 
 	spec for: #common do: [
 		spec package: 'Veritas-Regis'.
+		
+		"External dependencies"
+		spec baseline: 'ESUGApp' with: [ spec repository: 'github://jordanmontt/Regis:master' ].
+		spec package: 'Veritas-Regis' with: [ spec requires: #('ESUGApp') ].
 
 		"Groups"
 		spec group: 'Core' with: #( 'Veritas-Regis' ) ]
-]
-
-{ #category : 'baselines' }
-BaselineOfVeritasRegis >> preLoad [
-	"Download through executing the baseline because there are conflicts.
-	Using onConflictUseLoaded"
-
-	Metacello new
-		baseline: 'ESUGApp';
-		githubUser: 'ESUG' project: 'Regis' commitish: 'master' path: 'src';
-		onWarningLog;
-		onConflictUseLoaded;
-		load
 ]
