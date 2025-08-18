@@ -32,12 +32,12 @@ VeritasBloc class >> applicationPackagesNames [
 	     #Bloc #'Bloc-Text-Elements' #'BlocBenchs-Old' )
 ]
 
-{ #category : 'running' }
+{ #category : 'api' }
 VeritasBloc >> run [
 
 	PCBenchmarkSuite new
 		addCase: PCSolidCirclesBenchCase new;
-		numberOfSeconds: 10;
+		numberOfSeconds: 3;
 		addAlexandrieBenchmarker;
 		run
 ]
