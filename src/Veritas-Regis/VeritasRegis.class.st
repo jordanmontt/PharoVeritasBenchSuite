@@ -1,11 +1,21 @@
 Class {
 	#name : 'VeritasRegis',
-	#superclass : 'Object',
+	#superclass : 'VeritasBenchSuite',
 	#category : 'Veritas-Regis',
 	#package : 'Veritas-Regis'
 }
 
-{ #category : 'running' }
+{ #category : 'accessing' }
+VeritasRegis class >> applicationPackages [
+
+	^ #( #'ESUGApp-Database' #'ESUGApp-Component' #'ESUGApp-Core'
+	     #'ESUGApp-Controller' #'ESUGApp-Extensions'
+	     #'ESUGApp-Library' #'ESUGApp-PostMark-Core'
+	     #'ESUGApp-Form' #'ESUGApp-View' #'ESUGApp-Model' ) collect:
+		  #asPackage
+]
+
+{ #category : 'api' }
 VeritasRegis >> run [
 
 	ESUGSetUp start.
