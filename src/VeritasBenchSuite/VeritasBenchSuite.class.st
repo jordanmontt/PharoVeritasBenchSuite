@@ -19,8 +19,9 @@ VeritasBenchSuite class >> applicationMethods [
 
 { #category : 'accessing' }
 VeritasBenchSuite class >> applicationPackages [
+	"Return an array of packages"
 
-	^ {  }
+	^ self subclassResponsibility
 ]
 
 { #category : 'accessing' }
