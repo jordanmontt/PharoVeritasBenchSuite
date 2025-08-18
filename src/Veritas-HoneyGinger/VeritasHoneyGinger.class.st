@@ -17,7 +17,9 @@ VeritasHoneyGinger class >> applicationPackages [
 { #category : 'initialization' }
 VeritasHoneyGinger >> initialize [
 
-	renderingCycles := 600
+	super initialize.
+	"renderingCycles := 600"
+	renderingCycles := 60
 ]
 
 { #category : 'running' }

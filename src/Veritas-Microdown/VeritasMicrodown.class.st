@@ -25,7 +25,7 @@ VeritasMicrodown class >> applicationPackages [
 VeritasMicrodown class >> mainInputFilePath [
 
 	^ MainInputFilePath ifNil: [
-		  MainInputFilePath := '/Users/sebastian/Documents/Experiments/Files/Spec2Book/index.md' ]
+		  MainInputFilePath := FileLocator imageDirectory / 'Spec2Book/index.md' ]
 ]
 
 { #category : 'api' }
