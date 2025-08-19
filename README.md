@@ -24,6 +24,8 @@ There are some projects that have external dependencies. For example csv files. 
 
 In the file `scripts/installPharoImages.sh` you also have examples of how to do it. In the Section Available Benchmarks it will be explained.
 
+There are also examples of [ReBench](github.com/smarr/ReBench) file to use rebench to run your benchs.
+
 ## How to use
 
 You just need to call the method `run`. For example `VeritasRewriterTransformer new run`.
