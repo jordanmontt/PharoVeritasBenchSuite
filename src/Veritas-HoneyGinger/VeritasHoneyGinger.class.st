@@ -19,7 +19,7 @@ VeritasHoneyGinger >> initialize [
 
 	super initialize.
 	"renderingCycles := 600"
-	renderingCycles := 60
+	renderingCycles := 40
 ]
 
 { #category : 'running' }
