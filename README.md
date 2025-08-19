@@ -2,6 +2,28 @@
 
 Veritas is a collection of Pharo applications. For each application, Veritas provides a code snippet for running the application. In this repo, we call this a benchmark: *Executing an application*.
 
+
+## What is Veritas
+
+The idea of this project is to have a set of applications that people can *run*. Yes, you have an application and you can execute an user case. 
+
+This can be very useful for programmers that want to benchmark programms. Maybe you are developing a new compiler, a profiler that instruments the code, or you want to test different implementation or virtual machines, among other crazy possibilities. So Veritas will provide you, a set of applications that are diverse and they have different execution time lengths. You will see that you can have executions that last from less that a second to several minutes.
+
+This is Veritas, as the Romans will say - not confirmed citation - 
+
+> To find the truth (Veritas) you need to benchmark Pharo applications. Marcus Aurelius 
+
+
+**You can *fully* automate the execution**
+ 
+You can install Veritas, any of the projects, with all the dependencies and run it using only the command line. Like this you can run your benchmarks in a remote server like Marcus Aurelius would have liked.
+
+You have the file in `scripts/installPharoImages.sh` that is executable  script (do not forget to give it permissions with `chmod u+x filename`) and full example of how you can fully automate downloading a Pharo image and installing Veritas.
+
+There are some projects that have external dependencies. For example csv files. In the Section Available Benchmarks it will be explained which dependencies in details for which project. Note all the projects have dependencies. And, most importantly, this does not block the fully automatation.
+
+In the file `scripts/installPharoImages.sh` you also have examples of how to do it. In the Section Available Benchmarks it will be explained.
+
 ## How to use
 
 You just need to call the method `run`. For example `VeritasRewriterTransformer new run`.
@@ -56,7 +78,7 @@ spec
   with: [ spec repository:'github://jordanmontt/PharoVeritasBenchSuite:main' ].
 ```
 
-## Available benchmarks
+## Available Benchmarks
 
 - [DataFrame](https://github.com/PolyMathOrg/DataFrame)
 - [Cormas](https://github.com/cormas/cormas)
@@ -66,3 +88,25 @@ spec
 - [Moose](https://github.com/moosetechnology/Moose)
 - [Bloc](https://github.com/pharo-graphics/Bloc)
 - [Regis](https://github.com/ESUG/Regis)
+- [Microdowm](https://github.com/pillar-markup/Microdown)
+
+The majority of benchmarks work right out of the box with no further treatment. But there are some that depend on files or requiere some treatment to be able to run.
+
+### DataFrame
+
+The DataFrame benchmark depends on datasets - csv files. So, to run `VeritasDataFrame new run` you need that file.
+In this repo, along with the Veritas DataFrame code you have a small 2MB dataset that comes by default. You also have a python file that generates several synthetic benchmarks from all sizes.
+
+Note, you don't need to use this datasets, you can use your owns. If you want to use anothe dataset, another csv file, you can. You just need to edit the method run. So you do not depend on Python. The Python file is just a plus that generates synthetic benchmarks using a linear regression distribution with some noice.
+
+### Microdown
+
+For this benchmark Veritas takes the [Spec2 book](https://github.com/SquareBracketAssociates/BuildingApplicationWithSpec2/) and it fully parses it. So you need to have the book files in the image repo. In the example file  `scripts/installPharoImages.sh` you can see how to do it.
+
+### Moose
+
+For Moose you need a Java model. Basically you can import any java application and export the model in json. For the moment Veritas does not have a default Java model in json. It will come soon.
+
+***
+
+The other benchmarks run smothly with just installing the baseline.
