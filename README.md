@@ -79,12 +79,14 @@ spec
 In this secntion, we will list all the available benchmarks with a short description. Finally, we will list the benchmark that have dependencies on files.
 
 - [DataFrame](https://github.com/PolyMathOrg/DataFrame)
+Pharo's DataFrame implementation is a tabular data structure that represents structured data similarly to a spreadsheet or database table. It provides various functionalities for data manipulation and analysis. Veritas loads a dataset as benchmark. It provides a dataset by default: a synthetic dataset that follows a linear distribution with some noise. The dataset weighs 2,3 MB and it has 20,000 rows and 6 columns. It contains only numbers.
 - [Cormas](https://github.com/cormas/cormas)
 Cormas is a Pharo-based platform for agent-based modeling and simulations that supports Companion Modelling. It allows for various visualization strategies to be applied to agents or cells, enabling dynamic selection and parallel observation. We ran a simulation using the [ECEC model](github.com/cormas/ecec-model). The model simulates the survival of two populations, plants and foragers, on a two-dimensional grid.
 - [RewriteTools](https://github.com/jordanmontt/RewriteToolsSet)
 - [Re:MobiDyc](https://github.com/ReMobidyc/ReMobidyc)
 Re:Mobidyc is a multi-agent simulator for individual-based modeling in population dynamics and ecotoxicology. Veritas runs a simulation where wolves chase and eat goats in a grass field. The simulation shows the evolution of the wolves and goats population.
 - [HoneyGinger](https://github.com/tomooda/HoneyGinger/)
+HoneyGinger is a smoothed-particle hydrodynamics simulator with rich visualization and interactivity. Veritas renders one simulation for 40 rendering cycles. There are lots of available simulation and the rendering cyucles can be configured. It provides a default simulation and a default rendering cycles.
 - [Moose](https://github.com/moosetechnology/Moose)
 Moose is an open-source extensive platform for software and data analysis. It offers services ranging from importing and parsing data to model, measuring, querying, mining, and building interactive and visual analysis tools. Veritas loads a model of a software into the Moose meta-model.
 - [Bloc](https://github.com/pharo-graphics/Bloc)
