@@ -47,15 +47,32 @@ VeritasMoose class >> packageNames [
 	  , #( #'Fame-Example' #'Fame-Rules' #'Fame-Spec2' #'Fame-Core' #'Fame-Deprecated' #'Fame-ImportExport' )
 ]
 
-{ #category : 'running' }
+{ #category : 'api' }
+VeritasMoose >> mooseModelFile [
+   "Model classes:"" 
+	self allModelClasses size.  ""230""
+	""All classes in the model + external dependencies""
+	self allClasses size.  ""1293""
+
+	""Model methods:""
+	self allModelMethods size. ""1862""
+	""All methods in the model + external dependencies""
+	self allMethods size.  ""2942"
+
+	"SBSCL is a bio informatics Java project that can be found here: https://github.com/draeger-lab/SBSCL"
+ 
+	^ (FileLocator imageDirectory / 'sbscl.json') asFileReference
+]
+
+{ #category : 'api' }
 VeritasMoose >> run [
 
-	| model inputFile |
+	| model |
 	model := FamixJavaModel new.
-	inputFile := (FileLocator imageDirectory / 'mooseModel.json') asFileReference.
-	^ model importFromJSONStream: inputFile readStream filteredBy: FamixJavaImportingContext new importMaximum.
+	^ model importFromJSONStream: self mooseModelFile readStream filteredBy: FamixJavaImportingContext new importMaximum
+
 	"Open Architectural Map. The received entity must be a Moose object.
 	If it is a collection, you can convert it using #asMooseGroup.
-	Example: model entities asMooseGroup".
-	"MiArchitecturalMapBrowser open receiveEntity: model allModelClasses"
+	Example: model entities asMooseGroup"
+ 	"MiArchitecturalMapBrowser open receiveEntity: model allModelClasses"
 ]
