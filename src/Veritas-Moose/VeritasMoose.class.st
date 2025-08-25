@@ -60,6 +60,7 @@ VeritasMoose >> mooseModelFile [
 	self allMethods size.  ""2942"
 
 	"SBSCL is a bio informatics Java project that can be found here: https://github.com/draeger-lab/SBSCL"
+	"The Java code has been parsed the 25 August 2025."
  
 	^ (FileLocator imageDirectory / 'sbscl.json') asFileReference
 ]
