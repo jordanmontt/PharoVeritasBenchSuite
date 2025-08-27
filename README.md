@@ -88,7 +88,7 @@ Re:Mobidyc is a multi-agent simulator for individual-based modeling in populatio
 - [HoneyGinger](https://github.com/tomooda/HoneyGinger/)
 HoneyGinger is a smoothed-particle hydrodynamics simulator with rich visualization and interactivity. Veritas renders one simulation for 40 rendering cycles. There are lots of available simulation and the rendering cyucles can be configured. It provides a default simulation and a default rendering cycles.
 - [Moose](https://github.com/moosetechnology/Moose)
-Moose is an open-source extensive platform for software and data analysis. It offers services ranging from importing and parsing data to model, measuring, querying, mining, and building interactive and visual analysis tools. Veritas loads a model of a software into the Moose meta-model.
+Moose is a platform for software and data analysis in which users can import and parse software systems into the Moose meta-model, allowing users to model, measure, query, mine, and build interactive and visual analysis tools. Veritas, be default, loads a bioinformatics Java open-source project 11 into the Moose meta-model. The resulting software model has 1,293 classes and 2,942 methods. But users can load any model or any programming language that Moose supports.
 - [Bloc](https://github.com/pharo-graphics/Bloc)
 - [Regis](https://github.com/ESUG/Regis)
 - [Microdowm](https://github.com/pillar-markup/Microdown)
@@ -113,7 +113,7 @@ For this benchmark Veritas takes the [Spec2 book](https://github.com/SquareBrack
 
 #### Moose
 
-For Moose you need any Moose model (taken from Java, Pharo, or any language that you can parse into Moose). Basically you can import any application and export the model in json. For the moment Veritas does not have a default model in json. It will come soon.
+Veritas comes with a default Moose model. You have the `json` file in the same directory as the VeritasMoose class. But you can use **any** Moose model (taken from Java, Pharo, or any language that you can parse into Moose). Basically you can import any application and export the model in json.
 
 ***
 
