@@ -25,6 +25,34 @@ VeritasDataFrame >> run [
 	^ self runTinySynthetic
 ]
 
+{ #category : 'other datasets' }
+VeritasDataFrame >> runAWS1dot6GB [
+    "Where to download"
+
+    "https://www.kaggle.com/datasets/rahulbanerjee123/aws-product-length?resource=download (529
+	MB and 1.6 GB)"
+
+    self loadFileInDataFrame: 'train.csv'
+]
+
+{ #category : 'other datasets' }
+VeritasDataFrame >> runProtein1dot14GB [
+    "Where to downlaod"
+
+    "https://www.kaggle.com/datasets/antoninadolgorukova/proteinrna-vs-rna-spearman-correlation-data (1.4 GB)"
+
+    DataFrame readFromCsv: 'Prot-RNA_corr_21gr.csv'
+]
+
+{ #category : 'other datasets' }
+VeritasDataFrame >> runProtein3GB [
+    "Where to downlaod"
+
+    "https://www.kaggle.com/datasets/antoninadolgorukova/proteinrna-vs-rna-spearman-correlation-data? select=Prot-RNA_corr_63gr.csv (3.1 GB)"
+
+    DataFrame readFromCsv: 'Prot-RNA_corr_63gr.csv'
+]
+
 { #category : 'running' }
 VeritasDataFrame >> runSyntheticFiftyTimes [
 	"This is a synthetic dataset generated using make_regression of sklearn. 
