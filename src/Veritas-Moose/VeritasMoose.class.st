@@ -15,7 +15,23 @@ VeritasMoose class >> applicationPackages [
 { #category : 'as yet unclassified' }
 VeritasMoose class >> packageNames [
 
-	^  #(#'Famix-MetamodelGeneration' #'MooseIDE-ButterflyMap' #'Moose-Query-Extensions' #'MooseIDE-LayerVisualization' #'MooseIDE-Export' #'MooseIDE-Analysis' #'Famix-CriticBrowser-Entities' #'Famix-Java-Generator' #'Moose-Query' #'Famix-PharoSmalltalk-Entities' #'Moose-SmalltalkImporter' #'MooseIDE-Dependency' #'Moose-Core-Generator' #'Famix-Smalltalk-Utils' #'FamixReplication-Smalltalk' #'Fame-Rules' #'MooseIDE-AttributedText' #'MooseIDE-Duplication' #'Moose-WelcomeBrowser' #'MooseIDE-Core-Reporter' #'MooseIDE-Visualization' #'AI-MooseLinearAlgebra' #'Moose-Blueprint-Invocations-Models' #'MooseIDE-Tagging' #'Famix-CriticBrowser-Generator' #'Fame-ImportExport' #'Famix-Tagging' #'Famix-PharoSmalltalk-Generator' #'Famix-CriticBrowser-ManualEntities' #'Fame-Inspection' #'Famix-UMLDocumentor' #FamixReplication #'Famix-Traits' #'Moose-Configuration' #'Famix-Java-Fusionner' #'Famix-Visualizations' #'MooseIDE-NewTools' #'Famix-BasicInfrastructure' #'Moose-Blueprint-Visualization-Models' #'Famix-MetamodelBuilder-Core' #'MooseIDE-Spotter' #'MooseIDE-CoUsageMap' #'Famix-Queries' #'Fame-Core' #'Famix-Deprecated' #'Famix-Visitor-Generation' #'FamixReplication-CPP' #'MooseIDE-QueriesDashboard' #'MooseIDE-Meta' #'Moose-Core' #'MooseIDE-Core' #'Fame-Example' #'MooseIDE-Famix' #'Moose-Importers' #'Famix-Java-Entities' #'Fame-Deprecated' #'MooseIDE-CriticBrowser' #'Famix-Tagging-Code' #'MooseIDE-ClassBlueprint' #'MooseIDE-QueriesBrowser' #'Moose-Blueprint-Models')
+    ^ #( #'Moose-Configuration' #'MooseIDE-Duplication' #'MooseIDE-Core-Reporter'
+         #'Famix-Smalltalk-Utils' #'Famix-CriticBrowser-Generator' #'MooseIDE-Meta' #'MooseIDE-Core'
+         #'Famix-MetamodelBuilder-Core' #'MooseIDE-QueriesBrowser' #'MooseIDE-Dependency'
+         #'Famix-Tagging-Code' #'MooseIDE-Export' #'MooseIDE-CoUsageMap' #'MooseIDE-ButterflyMap'
+         #'Famix-Visualizations' #'Famix-Visitor-Generation' #'Moose-Core-Generator'
+         #'Famix-Deprecated' #'MooseIDE-WelcomeBrowser' #'Famix-CriticBrowser-ManualEntities'
+         #'FamixReplication-Smalltalk' #'MooseIDE-Spotter' #'Famix-Java-Generator'
+         #'Moose-Blueprint-Models' #'AI-MooseLinearAlgebra' #'Famix-UMLDocumentor' #FamixReplication
+         #'MooseIDE-NewTools' #'Moose-Query' #'MooseIDE-ClassBlueprint' #'Famix-Java-Fusionner'
+         #'Moose-Query-Extensions' #'Moose-Blueprint-Invocations-Models'
+         #'MooseIDE-LayerVisualization' #'Moose-SmalltalkImporter' #'MooseIDE-Famix' #'Famix-Java-Entities'
+         #'MooseIDE-Tagging' #'MooseIDE-Visualization' #'MooseIDE-QueriesDashboard'
+         #'Famix-Traits' #'Famix-BasicInfrastructure' #'Moose-Core' #'FamixReplication-CPP'
+         #'Famix-PharoSmalltalk-Entities' #'Famix-PharoSmalltalk-Generator'
+         #'Veritas-Moose' #'Famix-Tagging' #'Moose-Blueprint-Visualization-Models'
+         #'Famix-Queries' #'MooseIDE-AttributedText' #'Moose-Importers' #'MooseIDE-Analysis'
+         #'Famix-CriticBrowser-Entities' #'MooseIDE-CriticBrowser' #'Famix-MetamodelGeneration' )
 ]
 
 { #category : 'api' }
