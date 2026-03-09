@@ -4,9 +4,9 @@ Veritas is a collection of Pharo applications. For each application, Veritas pro
 
 ## What is Veritas
 
-The idea of this project is to have a set of applications that people can *run*. Yes, you have an application and you can execute an user case. 
+The idea of this project is to have a set of applications that people can *run*. Yes, you have an application, and you can execute a user case. 
 
-This can be very useful for programmers that want to benchmark programms. Maybe you are developing a new compiler, a profiler that instruments the code, or you want to test different implementation or virtual machines, among other crazy possibilities. So Veritas will provide you, a set of applications that are diverse and they have different execution time lengths. You will see that you can have executions that last from less that a second to several minutes.
+This can be very useful for programmers that want to benchmark programs. Maybe you are developing a new compiler, a profiler that instruments the code, or you want to test different implementations or virtual machines, among other crazy possibilities. So Veritas will provide you with a set of applications that are diverse and they have different execution time lengths. You will see that you can have executions that last from less than a second to several minutes.
 
 This is Veritas, as the Romans will say:
 
@@ -14,9 +14,9 @@ This is Veritas, as the Romans will say:
 
 **You can *fully* automate the execution**
  
-You can install Veritas, any of the projects, with all the dependencies and run it using only the command line. Like this you can run your benchmarks in a remote server like Marcus Aurelius would have liked.
-You have the file in `scripts/installPharoImages.sh` that is executable  script (do not forget to give it permissions with `chmod u+x filename`) and full example of how you can fully automate downloading a Pharo image and installing Veritas.
-There are some projects that have external dependencies. For example csv files. In the Section Available Benchmarks it will be explained which dependencies in details for which project. Note all the projects have dependencies. And, most importantly, this does not block the fully automatation.
+You can install Veritas, any of the projects, with all the dependencies, and run it using only the command line. Like this, you can run your benchmarks in a remote server like Marcus Aurelius would have liked.
+You have the file in `scripts/installPharoImages.sh` that is an executable  script (do not forget to give it permissions with `chmod u+x filename`) and full example of how you can fully automate downloading a Pharo image and installing Veritas.
+There are some projects that have external dependencies. For example csv files. In the Section Available Benchmarks it will be explained which dependencies in detail for which project. Note that all the projects have dependencies. And, most importantly, this does not block the full automation.
 In the file `scripts/installPharoImages.sh` you also have examples of how to do it. In the Section Available Benchmarks it will be explained.
 There are also examples of [ReBench](github.com/smarr/ReBench) file to use rebench to run your benchs.
 
@@ -76,45 +76,44 @@ spec
 
 ## Available Benchmarks
 
-In this secntion, we will list all the available benchmarks with a short description. Finally, we will list the benchmark that have dependencies on files.
+In this section, we will list all the available benchmarks with a short description. Finally, we will list the benchmarks that have dependencies on files.
 
 - [DataFrame](https://github.com/PolyMathOrg/DataFrame)
-Pharo's DataFrame implementation is a tabular data structure that represents structured data similarly to a spreadsheet or database table. It provides various functionalities for data manipulation and analysis. Veritas loads a dataset as benchmark. It provides a dataset by default: a synthetic dataset that follows a linear distribution with some noise. The dataset weighs 2,3 MB and it has 20,000 rows and 6 columns. It contains only numbers.
+Pharo's DataFrame implementation is a tabular data structure that represents structured data similarly to a spreadsheet or database table. It provides various functionalities for data manipulation and analysis. Veritas loads a dataset as a benchmark. It provides a dataset by default: a synthetic dataset that follows a linear distribution with some noise. The dataset weighs 2,3 MB and it has 20,000 rows and 6 columns. It contains only numbers.
 - [Cormas](https://github.com/cormas/cormas)
-Cormas is a Pharo-based platform for agent-based modeling and simulations that supports Companion Modelling. It allows for various visualization strategies to be applied to agents or cells, enabling dynamic selection and parallel observation. We ran a simulation using the [ECEC model](github.com/cormas/ecec-model). The model simulates the survival of two populations, plants and foragers, on a two-dimensional grid.
+Cormas is a Pharo-based platform for agent-based modeling and simulations that supports Companion Modelling. It allows for various visualization strategies to be applied to agents or cells, enabling dynamic selection and parallel observation. Veritas runs a simulation using the [ECEC model](github.com/cormas/ecec-model). The model simulates the survival of two populations, plants and foragers, on a two-dimensional grid.
 - [RewriteTools](https://github.com/jordanmontt/RewriteToolsSet)
-- [Re:MobiDyc](https://github.com/ReMobidyc/ReMobidyc)
-Re:Mobidyc is a multi-agent simulator for individual-based modeling in population dynamics and ecotoxicology. Veritas runs a simulation where wolves chase and eat goats in a grass field. The simulation shows the evolution of the wolves and goats population.
+- [Re:MobiDyc](https://github.com/ReMobidyc/ReMobidyc) Re:Mobidyc is a multi-agent simulator for individual-based modeling in population dynamics and ecotoxicology. Veritas runs a simulation where wolves chase and eat goats in a grass field. The simulation shows the evolution of the wolves and goats population.
 - [HoneyGinger](https://github.com/tomooda/HoneyGinger/)
-HoneyGinger is a smoothed-particle hydrodynamics simulator with rich visualization and interactivity. Veritas renders one simulation for 40 rendering cycles. There are lots of available simulation and the rendering cyucles can be configured. It provides a default simulation and a default rendering cycles.
+HoneyGinger is a smoothed-particle hydrodynamics simulator with rich visualization and interactivity. Veritas renders one simulation for 40 rendering cycles. There are lots of available simulations and the rendering cycles can be configured. It provides a default simulation and rendering cycles.
 - [Moose](https://github.com/moosetechnology/Moose)
-Moose is a platform for software and data analysis in which users can import and parse software systems into the Moose meta-model, allowing users to model, measure, query, mine, and build interactive and visual analysis tools. Veritas, be default, loads a bioinformatics Java open-source project 11 into the Moose meta-model. The resulting software model has 1,293 classes and 2,942 methods. But users can load any model or any programming language that Moose supports.
-- [Bloc](https://github.com/pharo-graphics/Bloc)
-- [Regis](https://github.com/ESUG/Regis)
+Moose is a platform for software and data analysis in which users can import and parse software systems into the Moose meta-model, allowing users to model, measure, query, mine, and build interactive and visual analysis tools. Veritas, by default, loads a bioinformatics Java open-source project 11 into the Moose meta-model. The resulting software model has 1,293 classes and 2,942 methods. But users can load any model or any programming language that Moose supports.
+- [Bloc](https://github.com/pharo-graphics/Bloc) Bloc is a full graphical stack build on top of a Cairo canvas. It provides all the functionality you can expect from a graphical stack on top of which you can build widget sets. 
+- [Regis](https://github.com/ESUG/Regis) Regis is web conference registration application. 
 - [Microdowm](https://github.com/pillar-markup/Microdown)
 Microdown is a markup language based on Markdown, offering flexible extension mechanisms for creating books, slides, and websites. We parsed and we generated an entire book, the [Spec book](github.com/SquareBracketAssociates/BuildingApplicationWithSpec2), that has 252 pages.
 
-The majority of benchmarks work right out of the box with no further treatment. But there are some that depend on files or requiere some treatment to be able to run.
+The majority of benchmarks work right out of the box with no further treatment. But there are some that depend on files or require some treatment to be able to run.
 
 ### Benchmarks that need a file to execute
 
-Here are listed the benchmarks that need some file to be executed. We will discribe which file and what are your options.
+Here are listed the benchmarks that need a file to be executed. We will describe which file and what your options are.
 
 #### DataFrame
 
 The DataFrame benchmark depends on datasets - csv files. So, to run `VeritasDataFrame new run` you need that file.
-In this repo, along with the Veritas DataFrame code you have a small 2MB dataset that comes by default. You also have a python file that generates several synthetic benchmarks from all sizes.
+In this repo, along with the Veritas DataFrame code, you have a small 2MB dataset that comes by default. You also have a Python file that generates several synthetic benchmarks from all sizes.
 
-**Note** You don't need to use this datasets, you can use your owns. If you want to use anothe dataset, another csv file, you can. You just need to edit the method run. So you do not depend on Python. The Python file is just a plus that generates synthetic benchmarks using a linear regression distribution with some noice.
+**Note** You don't need to use these datasets, you can use your own. If you want to use another dataset, another csv file, you can. You just need to edit the method run. So you do not depend on Python. The Python file is just a plus that generates synthetic benchmarks using a linear regression distribution with some noise.
 
 #### Microdown
 
-For this benchmark Veritas takes the [Spec2 book](https://github.com/SquareBracketAssociates/BuildingApplicationWithSpec2/) and it fully parses it. So you need to have the book files in the image repo. In the example file  `scripts/installPharoImages.sh` you can see how to do it.
+For this benchmark, Veritas takes the [Spec2 book](https://github.com/SquareBracketAssociates/BuildingApplicationWithSpec2/) and it fully parses it. So you need to have the book files in the image repo. In the example file  `scripts/installPharoImages.sh` you can see how to do it.
 
 #### Moose
 
-Veritas comes with a default Moose model. You have the `json` file in the same directory as the VeritasMoose class. But you can use **any** Moose model (taken from Java, Pharo, or any language that you can parse into Moose). Basically you can import any application and export the model in json.
+Veritas comes with a default Moose model. You have the `json` file in the same directory as the VeritasMoose class. But you can use **any** Moose model (taken from Java, Pharo, or any language that you can parse into Moose). Basically, you can import any application and export the model in json.
 
 ***
 
-The other benchmarks run smothly with just installing the baseline.
+The other benchmarks run smoothly with just installing the baseline.
