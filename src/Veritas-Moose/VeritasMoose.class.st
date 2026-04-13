@@ -1,6 +1,9 @@
 Class {
 	#name : 'VeritasMoose',
 	#superclass : 'VeritasBenchSuite',
+	#classVars : [
+		'ApplicationPackages'
+	],
 	#category : 'Veritas-Moose-Objects',
 	#package : 'Veritas-Moose',
 	#tag : 'Objects'
@@ -9,29 +12,29 @@ Class {
 { #category : 'as yet unclassified' }
 VeritasMoose class >> applicationPackages [
 
-	^ self packageNames collect: #asPackage
+	^ ApplicationPackages
 ]
 
 { #category : 'as yet unclassified' }
-VeritasMoose class >> packageNames [
+VeritasMoose class >> getMoosePackages [
 
-    ^ #( #'Moose-Configuration' #'MooseIDE-Duplication' #'MooseIDE-Core-Reporter'
-         #'Famix-Smalltalk-Utils' #'Famix-CriticBrowser-Generator' #'MooseIDE-Meta' #'MooseIDE-Core'
-         #'Famix-MetamodelBuilder-Core' #'MooseIDE-QueriesBrowser' #'MooseIDE-Dependency'
-         #'Famix-Tagging-Code' #'MooseIDE-Export' #'MooseIDE-CoUsageMap' #'MooseIDE-ButterflyMap'
-         #'Famix-Visualizations' #'Famix-Visitor-Generation' #'Moose-Core-Generator'
-         #'Famix-Deprecated' #'MooseIDE-WelcomeBrowser' #'Famix-CriticBrowser-ManualEntities'
-         #'FamixReplication-Smalltalk' #'MooseIDE-Spotter' #'Famix-Java-Generator'
-         #'Moose-Blueprint-Models' #'AI-MooseLinearAlgebra' #'Famix-UMLDocumentor' #FamixReplication
-         #'MooseIDE-NewTools' #'Moose-Query' #'MooseIDE-ClassBlueprint' #'Famix-Java-Fusionner'
-         #'Moose-Query-Extensions' #'Moose-Blueprint-Invocations-Models'
-         #'MooseIDE-LayerVisualization' #'Moose-SmalltalkImporter' #'MooseIDE-Famix' #'Famix-Java-Entities'
-         #'MooseIDE-Tagging' #'MooseIDE-Visualization' #'MooseIDE-QueriesDashboard'
-         #'Famix-Traits' #'Famix-BasicInfrastructure' #'Moose-Core' #'FamixReplication-CPP'
-         #'Famix-PharoSmalltalk-Entities' #'Famix-PharoSmalltalk-Generator'
-         #'Veritas-Moose' #'Famix-Tagging' #'Moose-Blueprint-Visualization-Models'
-         #'Famix-Queries' #'MooseIDE-AttributedText' #'Moose-Importers' #'MooseIDE-Analysis'
-         #'Famix-CriticBrowser-Entities' #'MooseIDE-CriticBrowser' #'Famix-MetamodelGeneration' )
+    | packages repoNames |
+    packages := { }.
+    repoNames := { 'Fame' . 'Famix' . 'FamixQueries' . 'FamixReplication' . 'FamixTagging' . 'Moose' . 'MooseIDE' }.
+    repoNames do: [ :repoName | 
+        | repo | 
+        repo := IceRepository registry detect: [ :each | each name includesSubstring: repoName caseSensitive: false ].
+        packages := packages , (repo workingCopy loadedPackages collect: #packageName as: Array) ].
+
+    packages := packages reject: [ :pckName | pckName includesSubstring: 'Test' caseSensitive: false ].
+    packages := packages reject: [ :pckName | pckName includesSubstring: 'Baseline' caseSensitive: false ].
+    ^ packages collect: [ :pckName | PackageOrganizer default packageNamed: pckName ]
+]
+
+{ #category : 'class initialization' }
+VeritasMoose class >> initialize [
+
+    ApplicationPackages := self getMoosePackages
 ]
 
 { #category : 'api' }
