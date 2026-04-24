@@ -17,7 +17,7 @@ VeritasCormas class >> applicationPackages [
 VeritasCormas >> run [
 
 	"self runEcecModelFor: 200000"
-	self runEcecModelFor: 20000
+	self runEcecModelFor: 60000
 ]
 
 { #category : 'as yet unclassified' }
