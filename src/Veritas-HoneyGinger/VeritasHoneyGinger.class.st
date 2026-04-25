@@ -18,8 +18,7 @@ VeritasHoneyGinger class >> applicationPackages [
 VeritasHoneyGinger >> initialize [
 
 	super initialize.
-	"renderingCycles := 600"
-	renderingCycles := 40
+	renderingCycles := 600
 ]
 
 { #category : 'running' }
@@ -29,7 +28,7 @@ VeritasHoneyGinger >> renderSimulation: aMorphSimulator [
 	aMorphSimulator window close
 ]
 
-{ #category : 'running' }
+{ #category : 'api' }
 VeritasHoneyGinger >> run [
 
 	"Simulations to use"
