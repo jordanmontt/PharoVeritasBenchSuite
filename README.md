@@ -15,9 +15,9 @@ This is Veritas, as the Romans will say:
 **You can *fully* automate the execution**
  
 You can install Veritas, any of the projects, with all the dependencies, and run it using only the command line. Like this, you can run your benchmarks in a remote server like Marcus Aurelius would have liked.
-You have the file in `scripts/installPharoImages.sh` that is an executable  script (do not forget to give it permissions with `chmod u+x filename`) and full example of how you can fully automate downloading a Pharo image and installing Veritas.
+You have the file in `scripts/downloadPharoAndInstallVeritas.sh` that is an executable script (do not forget to give it permissions with `chmod u+x filename`) and full example of how you can fully automate downloading a Pharo image, installing Veritas, and copying the dependency files (if any).
 There are some projects that have external dependencies. For example csv files. In the Section Available Benchmarks it will be explained which dependencies in detail for which project. Note that all the projects have dependencies. And, most importantly, this does not block the full automation.
-In the file `scripts/installPharoImages.sh` you also have examples of how to do it. In the Section Available Benchmarks it will be explained.
+In the file `scripts/downloadPharoAndInstallVeritas.sh` you also have examples of how to do it. In the Section Available Benchmarks it will be explained.
 There are also examples of [ReBench](github.com/smarr/ReBench) file to use rebench to run your benchs.
 
 ## How to use
