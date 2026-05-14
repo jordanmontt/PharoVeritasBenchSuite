@@ -16,8 +16,8 @@ VeritasCormas class >> applicationPackages [
 { #category : 'api' }
 VeritasCormas >> run [
 
-	"self runEcecModelFor: 200000"
-	self runEcecModelFor: 180000
+	"self runEcecModelFor: 180000"
+	self runEcecModelFor: 360000
 ]
 
 { #category : 'as yet unclassified' }
