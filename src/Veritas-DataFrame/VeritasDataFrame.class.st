@@ -70,6 +70,14 @@ VeritasDataFrame >> runSyntheticFiveHundredTimes [
 ]
 
 { #category : 'running' }
+VeritasDataFrame >> runSyntheticFiveTimes [
+	"This is a synthetic dataset generated using make_regression of sklearn.
+	It weights 23 MB. It has 200,000 rows and 5 columns. It contains only numbers"
+
+	self loadFileInDataFrame: 'tiny_five_times_larger_dataset.csv'
+]
+
+{ #category : 'running' }
 VeritasDataFrame >> runSyntheticOneHundredTimes [
 	"This is a synthetic dataset generated using make_regression of sklearn.
 	It weights 234 MB. It has 2,000,000 rows and 5 columns. It contains only numbers"
