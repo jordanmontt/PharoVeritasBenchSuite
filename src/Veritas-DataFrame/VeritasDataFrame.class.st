@@ -11,6 +11,12 @@ VeritasDataFrame class >> applicationPackages [
 	^ #( #'DataFrame-IO' #DataFrame ) collect: #asPackage
 ]
 
+{ #category : 'accessing' }
+VeritasDataFrame class >> fileName [
+
+	^ 'dataframe'
+]
+
 { #category : 'utilities' }
 VeritasDataFrame >> loadFileInDataFrame: aFileName [
 

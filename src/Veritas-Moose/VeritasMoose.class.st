@@ -16,6 +16,12 @@ VeritasMoose class >> applicationPackages [
 ]
 
 { #category : 'as yet unclassified' }
+VeritasMoose class >> fileName [
+
+	^ 'moose'
+]
+
+{ #category : 'as yet unclassified' }
 VeritasMoose class >> getMoosePackages [
 
     | packages repoNames |

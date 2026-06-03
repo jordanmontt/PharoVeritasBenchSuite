@@ -13,6 +13,12 @@ VeritasCormas class >> applicationPackages [
 	     #'Cormas-UI' #'Cormas-Mocks' ) collect: #asPackage
 ]
 
+{ #category : 'as yet unclassified' }
+VeritasCormas class >> fileName [
+
+	^ 'cormas'
+]
+
 { #category : 'api' }
 VeritasCormas >> run [
 
