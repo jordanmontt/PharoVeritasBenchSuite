@@ -28,19 +28,10 @@ VeritasCormas >> run [
 { #category : 'as yet unclassified' }
 VeritasCormas >> runEcecModelFor: durationSteps [
 
-	| simulation |
-	simulation := (CMSimulation for: ECECModel)
+	(CMSimulation for: ECECModel)
 		activeInitSelector: #homogeneousEnvironment;
 		finalTimeStep: durationSteps;
 		activeControlSelector: #step:;
 		initializeSimulation;
-		yourself.
-	simulation runAllSteps.
-	^ simulation
-	"simulation runAllStepsAfterEachDo: [
-		Transcript
-			show: 'Simulation step ';
-			show: simulation currentTimeStep asString;
-			cr ].
-	Transcript show: simulation data last; cr"
+		runAllSteps
 ]
