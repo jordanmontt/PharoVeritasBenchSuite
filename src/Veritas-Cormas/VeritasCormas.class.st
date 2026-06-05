@@ -22,7 +22,7 @@ VeritasCormas class >> fileName [
 { #category : 'api' }
 VeritasCormas >> run [
 
-   self runEcecModelFor: 180000
+   self runEcecModelFor: 70000
 ]
 
 { #category : 'as yet unclassified' }
