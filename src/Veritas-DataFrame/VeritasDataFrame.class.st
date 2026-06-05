@@ -28,7 +28,7 @@ VeritasDataFrame >> loadFileInDataFrame: aFileName [
 { #category : 'api' }
 VeritasDataFrame >> run [
 
-	^ self runSyntheticFiftyTimes
+	^ self runSyntheticTwentyFiveTimes
 ]
 
 { #category : 'other datasets' }
@@ -109,10 +109,10 @@ VeritasDataFrame >> runSyntheticTenTimes [
 
 { #category : 'running' }
 VeritasDataFrame >> runSyntheticTwentyFiveTimes [
-	"This is a synthetic dataset generated using make_regression of sklearn. 
-	It weights 58 MB. It has 500,000 rows and 5 columns. It contains only numbers"
+	"This is a synthetic dataset generated using make_regression of sklearn.
+	It weights 56 MB. It has 500,000 rows and 5 columns. It contains only numbers"
 
-	self loadFileInDataFrame: 'tiny_twenty_times_larger_dataset.csv'
+	self loadFileInDataFrame: 'tiny_twenty_five_times_larger_dataset.csv'
 ]
 
 { #category : 'running' }
