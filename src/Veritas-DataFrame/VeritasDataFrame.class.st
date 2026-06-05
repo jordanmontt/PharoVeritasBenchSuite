@@ -28,7 +28,7 @@ VeritasDataFrame >> loadFileInDataFrame: aFileName [
 { #category : 'api' }
 VeritasDataFrame >> run [
 
-	^ self runSyntheticTwentyFiveTimes
+	^ self runTinySynthetic
 ]
 
 { #category : 'other datasets' }
