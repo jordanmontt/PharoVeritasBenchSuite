@@ -14,6 +14,13 @@ VeritasHoneyGinger class >> applicationPackages [
 	^ #( 'HoneyGinger' ) collect: #asPackage
 ]
 
+{ #category : 'accessing' }
+VeritasHoneyGinger class >> fileName [
+   "Return a string"
+
+   ^ 'honeyGinger'
+]
+
 { #category : 'initialization' }
 VeritasHoneyGinger >> initialize [
 
