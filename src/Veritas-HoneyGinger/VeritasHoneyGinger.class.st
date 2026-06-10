@@ -25,7 +25,7 @@ VeritasHoneyGinger class >> fileName [
 VeritasHoneyGinger >> initialize [
 
 	super initialize.
-	renderingCycles := 70
+	renderingCycles := 900
 ]
 
 { #category : 'running' }
