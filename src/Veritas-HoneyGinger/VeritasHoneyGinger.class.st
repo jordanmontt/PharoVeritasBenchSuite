@@ -29,17 +29,23 @@ VeritasHoneyGinger >> initialize [
 ]
 
 { #category : 'running' }
-VeritasHoneyGinger >> renderSimulation: aMorphSimulator [
+VeritasHoneyGinger >> renderSimulation: aMorphSimulator withRenderingCycles: cycles [
 
-	renderingCycles timesRepeat: [ WorldMorph doOneCycle ].
+	cycles timesRepeat: [ WorldMorph doOneCycle ].
 	aMorphSimulator window close
 ]
 
 { #category : 'api' }
 VeritasHoneyGinger >> run [
 
+   self run: renderingCycles
+]
+
+{ #category : 'api' }
+VeritasHoneyGinger >> run: cycles [
+
 	"Simulations to use"
-	self renderSimulation: HGSimulator butterBallGraffitiAtDie
+	self renderSimulation: HGSimulator butterBallGraffitiAtDie withRenderingCycles: cycles.
 	"self renderSimulation: HGSimulator ramen."
 	"self renderSimulation: HGSimulator butterBall."
 	
