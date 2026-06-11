@@ -1,6 +1,10 @@
 Class {
 	#name : 'VeritasBloc',
 	#superclass : 'VeritasBenchSuite',
+	#instVars : [
+		'numberOfSeconds',
+		'benchCaseClass'
+	],
 	#category : 'Veritas-Bloc',
 	#package : 'Veritas-Bloc'
 }
@@ -32,18 +36,51 @@ VeritasBloc class >> applicationPackagesNames [
 	     #Bloc #'Bloc-Text-Elements' #'BlocBenchs-Old' )
 ]
 
+{ #category : 'accessing' }
+VeritasBloc class >> fileName [
+   "Return a string"
+
+   ^ 'bloc'
+]
+
+{ #category : 'accessing' }
+VeritasBloc >> benchCaseClass: anObject [
+
+	benchCaseClass := anObject
+]
+
+{ #category : 'initialization' }
+VeritasBloc >> initialize [
+
+	super initialize.
+	numberOfSeconds := 3.
+	benchCaseClass := PCSolidCirclesBenchCase
+]
+
+{ #category : 'accessing' }
+VeritasBloc >> numberOfSeconds: anObject [
+
+	numberOfSeconds := anObject
+]
+
 { #category : 'api' }
 VeritasBloc >> run [
 
-	self runInInteractiveMode
+	self runInInteractiveModeFor: numberOfSeconds
 ]
 
 { #category : 'api' }
 VeritasBloc >> runInHeadlessMode [
 
+	self runInHeadlessModeFor: numberOfSeconds
+]
+
+{ #category : 'api' }
+VeritasBloc >> runInHeadlessModeFor: seconds [
+
 	PCBenchmarkSuite new
-		addCase: PCSolidCirclesBenchCase new;
-		numberOfSeconds: 3;
+		addCase: benchCaseClass new;
+		numberOfSeconds: seconds;
 		addHeadlessBenchmarker;
 		runVeritas
 ]
@@ -51,9 +88,15 @@ VeritasBloc >> runInHeadlessMode [
 { #category : 'api' }
 VeritasBloc >> runInInteractiveMode [
 
+	self runInInteractiveModeFor: numberOfSeconds
+]
+
+{ #category : 'api' }
+VeritasBloc >> runInInteractiveModeFor: seconds [
+
 	PCBenchmarkSuite new
-		addCase: PCSolidCirclesBenchCase new;
-		numberOfSeconds: 3;
-		addAlexandrieBenchmarker;
+		addCase: benchCaseClass new;
+		numberOfSeconds: seconds;
+		addHeadlessBenchmarker;
 		runVeritas
 ]
