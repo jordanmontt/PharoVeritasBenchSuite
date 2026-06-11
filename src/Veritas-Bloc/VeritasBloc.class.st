@@ -97,6 +97,6 @@ VeritasBloc >> runInInteractiveModeFor: seconds [
 	PCBenchmarkSuite new
 		addCase: benchCaseClass new;
 		numberOfSeconds: seconds;
-		addHeadlessBenchmarker;
+		addAlexandrieBenchmarker;
 		runVeritas
 ]
