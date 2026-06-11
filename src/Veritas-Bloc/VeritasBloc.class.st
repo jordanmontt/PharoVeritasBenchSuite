@@ -53,7 +53,7 @@ VeritasBloc >> benchCaseClass: anObject [
 VeritasBloc >> initialize [
 
 	super initialize.
-	numberOfSeconds := 3.
+	numberOfSeconds := 25.
 	benchCaseClass := PCSolidCirclesBenchCase
 ]
 
@@ -66,7 +66,7 @@ VeritasBloc >> numberOfSeconds: anObject [
 { #category : 'api' }
 VeritasBloc >> run [
 
-	self runInInteractiveModeFor: numberOfSeconds
+	self runInHeadlessModeFor: numberOfSeconds
 ]
 
 { #category : 'api' }
