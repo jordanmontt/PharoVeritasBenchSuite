@@ -35,9 +35,25 @@ VeritasBloc class >> applicationPackagesNames [
 { #category : 'api' }
 VeritasBloc >> run [
 
+	self runInInteractiveMode
+]
+
+{ #category : 'api' }
+VeritasBloc >> runInHeadlessMode [
+
+	PCBenchmarkSuite new
+		addCase: PCSolidCirclesBenchCase new;
+		numberOfSeconds: 3;
+		addHeadlessBenchmarker;
+		runVeritas
+]
+
+{ #category : 'api' }
+VeritasBloc >> runInInteractiveMode [
+
 	PCBenchmarkSuite new
 		addCase: PCSolidCirclesBenchCase new;
 		numberOfSeconds: 3;
 		addAlexandrieBenchmarker;
-		run
+		runVeritas
 ]
