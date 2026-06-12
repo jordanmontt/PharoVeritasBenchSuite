@@ -2,8 +2,7 @@ Class {
 	#name : 'VeritasBloc',
 	#superclass : 'VeritasBenchSuite',
 	#instVars : [
-		'numberOfSeconds',
-		'benchCaseClass'
+		'numberOfFrames'
 	],
 	#category : 'Veritas-Bloc',
 	#package : 'Veritas-Bloc'
@@ -43,60 +42,38 @@ VeritasBloc class >> fileName [
    ^ 'bloc'
 ]
 
-{ #category : 'accessing' }
-VeritasBloc >> benchCaseClass: anObject [
-
-	benchCaseClass := anObject
-]
-
 { #category : 'initialization' }
 VeritasBloc >> initialize [
 
 	super initialize.
-	numberOfSeconds := 25.
-	benchCaseClass := PCSolidCirclesBenchCase
+	numberOfFrames := 250
 ]
 
 { #category : 'accessing' }
-VeritasBloc >> numberOfSeconds: anObject [
+VeritasBloc >> numberOfFrames: anInteger [
 
-	numberOfSeconds := anObject
+	numberOfFrames := anInteger
 ]
 
 { #category : 'api' }
 VeritasBloc >> run [
 
-	self runInHeadlessModeFor: numberOfSeconds
+	self runBoxWindmillBlocCase
 ]
 
 { #category : 'api' }
-VeritasBloc >> runInHeadlessMode [
+VeritasBloc >> runBoidsSkyCase [
 
-	self runInHeadlessModeFor: numberOfSeconds
-]
-
-{ #category : 'api' }
-VeritasBloc >> runInHeadlessModeFor: seconds [
-
-	PCBenchmarkSuite new
-		addCase: benchCaseClass new;
-		numberOfSeconds: seconds;
-		addHeadlessBenchmarker;
+	BlBBoidsSkyCase new
+		element: BoidsUsingTriangleSkyElement new;
+		runner: (BlBBlocBenchFrameRunner forFrames: numberOfFrames);
 		runVeritas
 ]
 
 { #category : 'api' }
-VeritasBloc >> runInInteractiveMode [
+VeritasBloc >> runBoxWindmillBlocCase [
 
-	self runInInteractiveModeFor: numberOfSeconds
-]
-
-{ #category : 'api' }
-VeritasBloc >> runInInteractiveModeFor: seconds [
-
-	PCBenchmarkSuite new
-		addCase: benchCaseClass new;
-		numberOfSeconds: seconds;
-		addAlexandrieBenchmarker;
+	BlBBoxWindmillBlocCase new
+		runner: (BlBBlocBenchFrameRunner forFrames: numberOfFrames);
 		runVeritas
 ]
