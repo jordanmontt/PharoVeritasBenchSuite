@@ -14,26 +14,38 @@ VeritasHoneyGinger class >> applicationPackages [
 	^ #( 'HoneyGinger' ) collect: #asPackage
 ]
 
+{ #category : 'accessing' }
+VeritasHoneyGinger class >> fileName [
+   "Return a string"
+
+   ^ 'honeyGinger'
+]
+
 { #category : 'initialization' }
 VeritasHoneyGinger >> initialize [
 
 	super initialize.
-	"renderingCycles := 600"
-	renderingCycles := 40
+	renderingCycles := 900
 ]
 
 { #category : 'running' }
-VeritasHoneyGinger >> renderSimulation: aMorphSimulator [
+VeritasHoneyGinger >> renderSimulation: aMorphSimulator withRenderingCycles: cycles [
 
-	renderingCycles timesRepeat: [ WorldMorph doOneCycle ].
+	cycles timesRepeat: [ WorldMorph doOneCycle ].
 	aMorphSimulator window close
 ]
 
-{ #category : 'running' }
+{ #category : 'api' }
 VeritasHoneyGinger >> run [
 
+   self run: renderingCycles
+]
+
+{ #category : 'api' }
+VeritasHoneyGinger >> run: cycles [
+
 	"Simulations to use"
-	self renderSimulation: HGSimulator butterBallGraffitiAtDie
+	self renderSimulation: HGSimulator butterBallGraffitiAtDie withRenderingCycles: cycles.
 	"self renderSimulation: HGSimulator ramen."
 	"self renderSimulation: HGSimulator butterBall."
 	

@@ -25,6 +25,13 @@ VeritasBenchSuite class >> applicationPackages [
 ]
 
 { #category : 'accessing' }
+VeritasBenchSuite class >> fileName [
+   "Return a string"
+
+   ^ self subclassResponsibility
+]
+
+{ #category : 'accessing' }
 VeritasBenchSuite >> applicationClasses [
 
 	^ self class applicationClasses

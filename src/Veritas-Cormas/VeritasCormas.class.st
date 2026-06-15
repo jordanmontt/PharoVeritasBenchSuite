@@ -13,29 +13,25 @@ VeritasCormas class >> applicationPackages [
 	     #'Cormas-UI' #'Cormas-Mocks' ) collect: #asPackage
 ]
 
+{ #category : 'as yet unclassified' }
+VeritasCormas class >> fileName [
+
+	^ 'cormas'
+]
+
 { #category : 'api' }
 VeritasCormas >> run [
 
-	"self runEcecModelFor: 200000"
-	self runEcecModelFor: 20000
+   self runEcecModelFor: 70000
 ]
 
 { #category : 'as yet unclassified' }
 VeritasCormas >> runEcecModelFor: durationSteps [
 
-	| simulation |
-	simulation := (CMSimulation for: ECECModel)
+	(CMSimulation for: ECECModel)
 		activeInitSelector: #homogeneousEnvironment;
 		finalTimeStep: durationSteps;
 		activeControlSelector: #step:;
 		initializeSimulation;
-		yourself.
-	simulation runAllSteps.
-	^ simulation
-	"simulation runAllStepsAfterEachDo: [
-		Transcript
-			show: 'Simulation step ';
-			show: simulation currentTimeStep asString;
-			cr ].
-	Transcript show: simulation data last; cr"
+		runAllSteps
 ]

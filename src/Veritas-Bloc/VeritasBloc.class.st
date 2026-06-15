@@ -1,6 +1,9 @@
 Class {
 	#name : 'VeritasBloc',
 	#superclass : 'VeritasBenchSuite',
+	#instVars : [
+		'numberOfFrames'
+	],
 	#category : 'Veritas-Bloc',
 	#package : 'Veritas-Bloc'
 }
@@ -32,12 +35,45 @@ VeritasBloc class >> applicationPackagesNames [
 	     #Bloc #'Bloc-Text-Elements' #'BlocBenchs-Old' )
 ]
 
+{ #category : 'accessing' }
+VeritasBloc class >> fileName [
+   "Return a string"
+
+   ^ 'bloc'
+]
+
+{ #category : 'initialization' }
+VeritasBloc >> initialize [
+
+	super initialize.
+	numberOfFrames := 250
+]
+
+{ #category : 'accessing' }
+VeritasBloc >> numberOfFrames: anInteger [
+
+	numberOfFrames := anInteger
+]
+
 { #category : 'api' }
 VeritasBloc >> run [
 
-	PCBenchmarkSuite new
-		addCase: PCSolidCirclesBenchCase new;
-		numberOfSeconds: 3;
-		addAlexandrieBenchmarker;
-		run
+	self runBoxWindmillBlocCase
+]
+
+{ #category : 'api' }
+VeritasBloc >> runBoidsSkyCase [
+
+	BlBBoidsSkyCase new
+		element: BoidsUsingTriangleSkyElement new;
+		runner: (BlBBlocBenchFrameRunner forFrames: numberOfFrames);
+		runVeritas
+]
+
+{ #category : 'api' }
+VeritasBloc >> runBoxWindmillBlocCase [
+
+	BlBBoxWindmillBlocCase new
+		runner: (BlBBlocBenchFrameRunner forFrames: numberOfFrames);
+		runVeritas
 ]

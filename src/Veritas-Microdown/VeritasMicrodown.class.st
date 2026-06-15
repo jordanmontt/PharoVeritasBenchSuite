@@ -11,14 +11,22 @@ Class {
 { #category : 'accessing' }
 VeritasMicrodown class >> applicationPackages [
 
-	^ #( #'Microdown-HTMLExporter' #'Microdown-Transformer'
-	     #'Microdown-PrettyPrinter' #'Microdown-BeamerExporter'
-	     #'Microdown-RichTextComposer' #'Microdown-BrowserExtensions'
-	     #'Microdown-RichTextPresenter' #'Microdown-Blog'
-	     #Microdown #'Microdown-Evaluator' #'Spec2-Microdown'
-	     #'Microdown-BookTester' #'Microdown-LaTeXExporter'
-	     #'Microdown-ParentChildrenChecker'
-	     #'Microdown-Pharo-Tools' ) collect: #asPackage
+	^ self getMicrodownPackages
+]
+
+{ #category : 'accessing' }
+VeritasMicrodown class >> getMicrodownPackages [
+
+    | packages repo |
+    packages := { }.
+    repo := IceRepository registry
+        detect: [ :each | each name includesSubstring: 'Microdown' caseSensitive: false ].
+    packages := packages , (repo workingCopy loadedPackages collect: #packageName as: Array) .
+
+    packages := packages reject: [ :pckName | pckName includesSubstring: 'Test' caseSensitive: false ].
+    packages := packages reject: [ :pckName | pckName includesSubstring: 'Baseline' caseSensitive: false ].
+
+    ^ packages collect: [ :pckName | PackageOrganizer default packageNamed: pckName ]
 ]
 
 { #category : 'api' }
