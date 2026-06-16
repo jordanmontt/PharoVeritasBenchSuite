@@ -5,12 +5,14 @@ Class {
 	#package : 'Veritas-Bloc'
 }
 
+{ #category : 'testing' }
+VeritasBlocBoidsSkyTriangle class >> isDeprecated [
+
+	^ true
+]
+
 { #category : 'api' }
 VeritasBlocBoidsSkyTriangle >> run [
 
-	BlBBoidsSkyCase new
-		label: 'BlBBoidsSkyCase using triangle geometry';
-		element: BoidsUsingTriangleSkyElement new;
-		runner: (BlBBlocBenchFrameRunner forFrames: 500);
-		run
+	^ VeritasBloc new runBoidsSkyCase 
 ]

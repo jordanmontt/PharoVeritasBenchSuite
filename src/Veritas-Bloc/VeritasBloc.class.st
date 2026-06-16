@@ -46,7 +46,7 @@ VeritasBloc class >> fileName [
 VeritasBloc >> initialize [
 
 	super initialize.
-	numberOfFrames := 250
+	numberOfFrames := 500
 ]
 
 { #category : 'accessing' }
@@ -64,16 +64,17 @@ VeritasBloc >> run [
 { #category : 'api' }
 VeritasBloc >> runBoidsSkyCase [
 
-	BlBBoidsSkyCase new
+	^ BlBBoidsSkyCase new
+		label: 'BlBBoidsSkyCase using triangle geometry';	
 		element: BoidsUsingTriangleSkyElement new;
-		runner: (BlBBlocBenchFrameRunner forFrames: numberOfFrames);
+		runner: (VeritasBlocBenchFrameRunner forFrames: numberOfFrames);
 		runVeritas
 ]
 
 { #category : 'api' }
 VeritasBloc >> runBoxWindmillBlocCase [
 
-	BlBBoxWindmillBlocCase new
-		runner: (BlBBlocBenchFrameRunner forFrames: numberOfFrames);
+	^ BlBBoxWindmillBlocCase new
+		runner: (VeritasBlocBenchFrameRunner forFrames: numberOfFrames);
 		runVeritas
 ]
