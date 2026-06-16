@@ -5,10 +5,14 @@ Class {
 	#package : 'Veritas-Bloc'
 }
 
+{ #category : 'testing' }
+VeritasBlocBoxWindmill class >> isDeprecated [ 
+
+	^ true
+]
+
 { #category : 'api' }
 VeritasBlocBoxWindmill >> run [
 
-	BlBBoxWindmillBlocCase new
-		runner: (BlBBlocBenchFrameRunner forFrames: 250);
-		run
+	^ VeritasBloc new runBoxWindmillBlocCase
 ]
